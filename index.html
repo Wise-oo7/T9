@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+.sub-header{
+	background-color: #a4c639;
+	line-height: 46px;
+}
+
+.sub-header ul li{
+	display: inline-block;
+}
+
+.sub-header ul.left-info li{
+	padding: 0 20px;
+	border-left: 1px solid rgba(250,250,250,0.3);
+}
+
+.sub-header ul.left-info li:last-child {
+    border-right: 1px solid rgba(250,250,250,0.3);
+}
+
+.sub-header ul.left-info li i {
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+ul{
+	padding: 0;
+	margin: 0;
+}
+
+ul li a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+
+.sub-header ul.right-icons {
+    float: right;
+}
+
+.sub-header ul.right-icons li {
+    margin-right: -4px;
+    width: 46px;
+    display: inline-block;
+    text-align: center;
+    border-right: 1px solid rgba(250,250,250,0.3);
+}
+
+.sub-header ul.right-icons li:first-child {
+    border-left: 1px solid rgba(250,250,250,0.3);
+}
+
+
+.main-banner{
+	background-image: url('c4.jpg');
+	background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 95vh;
+}
+
+.navbar{
+	padding: 20px 0;
+}
+
+.logo{
+	color: #fff;
+	font-size: 24px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.navbar-nav{
+	margin-left: auto;
+}
+
+.navbar-nav .nav-item{
+	margin: 0px 15px;
+}
+
+.navbar-nav a.nav-link{
+	font-size: 15px;
+	font-weight: 300;
+	letter-spacing: 0.5px;
+	color: #fff;
+	margin-top: 5px;
+	transition: .4s;
+}
+
+.navbar-nav a.nav-link:hover{
+	color: #a4c639;
+    border-bottom: 3px solid #a4c639;
+}
+
+.text-content{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: left;
+    width: 75%;
+    transform: translate(-50%, -50%);
+}
+
+.text-content h6{
+	margin-bottom: 15px;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #a4c639;
+}
+
+.text-content h4{
+	margin-bottom: 30px;
+    text-transform: uppercase;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: #FFF;
+}
+
+.text-content p{
+	max-width: 570px;
+	color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 40px;
+}
+
+.text-content .service-btn{
+	background-color: #a4c639;
+    color: #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 30px;
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.request-form{
+	background-color: #a4c639;
+    padding: 40px 0px;
+    color: #fff;
+}
+
+.request-form h4{
+	font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.request-form span{
+	font-size: 15px;
+    font-weight: 400;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.request-btn{
+	margin-top: 12px;
+    float: right;
+}
+
+a.request-btn{
+	background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 28px;
+    border-radius: 30px;
+    display: inline-block;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.services{
+	margin-top: 140px;
+}
+
+.services .services-heading{
+	text-align: center;
+    margin-bottom: 80px;
+}
+
+.services h2{
+	font-size: 36px;
+    font-weight: 600;
+    color: #1e1e1e;
+}
+
+.services em{
+    font-style: normal;
+    color: #a4c639;
+}
+
+.services span{
+	display: block;
+    margin-top: 15px;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #666;
+    letter-spacing: 1px;
+}
+
+.service-item img{
+	width: 100%;
+    overflow: hidden;
+}
+
+.service-item .down-content{
+	background-color: #f7f7f7;
+    padding: 30px;
+}
+
+.service-item .down-content h4{
+	font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.25px;
+    margin-bottom: 15px;
+}
+
+.service-item .down-content p{
+	margin-bottom: 20px;
+	font-size: 14px;
+    color: #666666;
+    line-height: 30px;
+}
+
+a.filled-button{
+	background-color: #a4c639;
+    color: #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 30px;
+    display: inline-block;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.work-section{
+	background-image: url('T3.jpeg');
+	margin-top: 140px;
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 140px 0px;
+    color: #fff;
+}
+
+.work-section .left-content{
+	margin-right: 45px;
+}
+
+.left-content span{
+	text-transform: uppercase;
+    font-size: 15px;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.left-content h2{
+	font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 35px;
+}
+
+.left-content em{
+	font-style: normal;
+    color: #a4c639;
+}
+
+.left-content p{
+	color: #fff;
+	font-size: 14px;
+	line-height: 30px;
+    margin-bottom: 40px;
+}
+
+.count-content{
+	text-align: center;
+    background-color: rgba(250,250,250,0.1);
+    padding: 25px 30px 35px 30px;
+    margin: 15px 0px;
+}
+
+.count-content h1{
+	margin: 5px 0px;
+    color: #a4c639;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.count-content h2{
+	font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.more-detail{
+	margin-top: 140px;
+}
+
+.more-info-content{
+	background-color: #f7f7f7;
+}
+
+.more-info-content img{
+	width: 100%;
+    overflow: hidden;
+}
+
+.more-info-content .right-content{
+	padding: 45px 45px 45px 30px;
+}
+
+.right-content span{
+	text-transform: uppercase;
+    font-size: 15px;
+    color: #666;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.right-content h2{
+	font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 35px;
+}
+
+.right-content em{
+	font-style: normal;
+    color: #a4c639;
+}
+
+.right-content p{
+	margin-bottom: 30px;
+	font-size: 14px;
+    color: #666666;
+    line-height: 30px;
+}
+
+.testimonials{
+	margin-top: 140px;
+    background-color: #f7f7f7;
+    padding: 140px 0px;
+}
+
+.section-heading{
+	text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-heading h2{
+	font-size: 36px;
+    font-weight: 600;
+    color: #1e1e1e;
+}
+
+.section-heading em{
+	font-style: normal;
+    color: #a4c639;
+}
+
+.section-heading span{
+	display: block;
+    margin-top: 15px;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #666;
+    letter-spacing: 1px;
+}
+
+.testimonial-item .testimonail-content{
+	text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.testimonial-item .img{
+	text-align: center;
+}
+
+.testimonial-item img{
+	max-width: 60px;
+    border-radius: 50%;
+    margin: 25px auto 0px auto;
+}
+
+.testimonial-item h4{
+	font-size: 19px;
+    font-weight: 700;
+    color: #1e1e1e;
+    letter-spacing: 0.5px;
+    margin-bottom: 0px;
+}
+
+.testimonial-item span{
+	display: inline-block;
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #a4c639;
+}
+
+.testimonial-item p{
+	font-size: 14px;
+    font-weight: 400;
+    color: #666666;
+    line-height: 30px;
+}
+
+.callback-form {
+    margin-top: 140px;
+}
+
+.callback-form .contact-form{
+	background-color: #a4c639;
+    padding: 60px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.form-control{
+	width: 100%;
+}
+
+fieldset{
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.callback-form .contact-form input {
+	width: 100%;
+    border-radius: 20px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    padding: 0px 15px;
+    color: #6a6a6a;
+    font-size: 13px;
+    text-transform: none;
+    box-shadow: none;
+    border: none;
+    margin-bottom: 35px;
+}
+
+.callback-form .contact-form textarea {
+    border-radius: 20px;
+    height: 120px;
+    max-height: 200px;
+    min-height: 120px;
+    display: inline-block;
+    padding: 15px;
+    color: #6a6a6a;
+    font-size: 13px;
+    text-transform: none;
+    box-shadow: none;
+    border: none;
+    margin-bottom: 35px;
+}
+
+.callback-form .contact-form button.border-button {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 28px;
+    border-radius: 30px;
+    display: inline-block;
+    transition: all 0.3s;
+    outline: none;
+    box-shadow: none;
+    text-shadow: none;
+    cursor: pointer;
+}
+
+.callback-form .contact-form button.border-button:hover{
+	background-color: #fff;
+	color: #a4c639;
+}
+
+.partner{
+	margin-top: 140px;
+	background-color: #f7f7f7;
+	padding: 60px 0px;
+}
+
+.partner-item{
+	text-align: center;
+}
+
+footer{
+    background-color: #232323;
+	text-align: center;
+    padding: 80px 0px;
+    color: #fff;
+}
+
+footer h4 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+	 text-align: center;
+    letter-spacing: 0.25px;
+    margin-bottom: 35px;
+}
+
+footer p {
+    color: #fff;
+    margin-bottom: 0px;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+footer ul{
+	list-style-type: none;
+}
+
+footer ul.social-icons {
+    margin-top: 25px;
+}
+
+footer ul.social-icons li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+footer ul.social-icons li a {
+    width: 34px;
+    height: 34px;
+    display: inline-block;
+    line-height: 34px;
+    text-align: center;
+    background-color: #fff;
+    color: #232323;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+footer ul.menu-list li {
+    margin-bottom: 13px;
+}
+
+footer ul.menu-list li a{
+	font-weight: 400;
+    font-size: 14px;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+footer ul.menu-list li a:hover{
+	color: #a4c639;
+}
+
+footer .contact-form input{
+    border-radius: 20px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    padding: 0px 15px;
+    color: #aaa!important;
+    background-color: #343434;
+    font-size: 13px;
+    text-transform: none;
+    box-shadow: none;
+    border: none;
+    margin-bottom: 15px;
+}
+
+footer .contact-form textarea {
+    border-radius: 20px;
+    height: 120px;
+    max-height: 200px;
+    min-height: 120px;
+    display: inline-block;
+    padding: 15px;
+    color: #aaa!important;
+    background-color: #343434;
+    font-size: 13px;
+    text-transform: none;
+    box-shadow: none;
+    border: none;
+    margin-bottom: 15px;
+}
+
+footer .contact-form button.filled-button{
+	color: #fff;
+    background-color: #a4c639;
+    border: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 30px;
+    display: inline-block;
+    transition: all 0.3s;
+    outline: none;
+    box-shadow: none;
+    text-shadow: none;
+    cursor: pointer;
+}
+
+footer .contact-form button.filled-button:hover{
+	background-color: #fff;
+	color: #a4c639;
+}
+
+.sub-footer {
+    background-color: #343434;
+    text-align: center;
+    padding: 25px 0px;
+    overflow: hidden;
+}
+
+.sub-footer p {
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.sub-footer a {
+    color: #fff;
+    text-decoration: none;
+}
+body{
+  background: #222
+}
+
+
+
+.whatsapp-ico{
+    fill: white;
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+    background-color: #4dc247;
+    border-radius: 50%;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    /* box-shadow: 2px 2px 11px rgba(0,0,0,0.7); */
+    position: fixed;
+    bottom: 20px;
+    right : 20px;
+    z-index: 10;
+}
+
+.whatsapp-ico:hover{
+    box-shadow: 2px 2px 11px rgba(0,0,0,0.7);
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WiseWarden!</title>
+	
+	
+	 <link rel="stylesheet" type="text/css" href="style.css">
+	 
+</head>
+<body>
+
+	
+	<!-- Sub-header -->
+	<div class="container-fluid sub-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<ul class="left-info">
+					
+                        <li><a href="https://youtube.com/@PreserveAt">
+							<i class="fa-solid fa-phone"></i> YouTube
+						</a></li>
+						
+                        <li><a href="ContactUs.html">
+							<i class="fa-solid fa-phone"></i> Twitter
+						</a></li>
+						  <li><a href="https://www.instagram.com/reel/CvjpLt1gy91/?igshid=NjIwNzIyMDk2Mg==">
+							<i class="fa-solid fa-phone"></i> Instagram
+						</a></li>
+						  <li><a href="ContactUs.html">
+							<i class="fa-solid fa-phone"></i>Facebook
+						</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Sub-header-end -->
+
+	<!-- Header -->
+	<div class="container-fluid main-banner">
+		
+		<!-- navbar -->
+		<div class="container">
+		<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">   
+	  
+      </ul>
+    </div>
+  </div>
+</nav>
+		</div>
+		<!-- navbar-end -->
+		<!-- text content -->
+		<div class="text-content">
+				<h6>we have a solid background</h6>
+				<h4>Market Analysis
+					<br>
+				& Statistics</h4>
+				<p> You decide what's best for your Child, Easy to use tools allow you to understand
+				     how your child is spending time on their device, share location, manage privacy settings, and more.</p>
+				<a href="OurServices.html" class="service-btn">OUR-SERVICES(Hindi)</a>
+                                <a href="OurServices(En).html" class="service-btn">OUR-SERVICES(English)</a>
+                               
+
+	</div> 
+	<!-- text-content end -->
+	</div>
+	<!-- Header-end -->
+
+
+	<!-- request section -->
+	<div class="container-fluid request-form">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<h4>&#9210 Request a call back right now ?</h4>
+					<span>&#9210 Establish digital ground rules.</span>
+				</div>
+				<div class="col-md-4">
+					<!-- <a href="#" class="request-btn">Contact Us</a> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- request section end -->
+	
+
+	
+
+     <!-- Add this inside your HTML body where you want the WhatsApp button -->
+<a href=" https://chat.whatsapp.com/FbD9RfYupSkEEDJ6iaC6IX" target="_blank"><svg viewBox="0 0 32 32" class="whatsapp-ico"><path d=" M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z" fill-rule="evenodd"></path></svg></a>
+	<!-- services -->
+	
+	
+	
+	<div class="container services">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="services-heading">
+					<h2>Manage and secure
+						<em>your child's routine</em>
+					</h2>
+					<span>You can view and manage permissions for websites and extensions and more.</span>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="service-item">
+					<img src="c2.jpg"> 
+				<div class="down-content">
+					<h4>Digital Eye! &#8987</h4>
+					<p>Give Your Child's Eyes a Screen-Time Break: Here's Why?</p>
+					<a href="DigitalEyes.html" class="filled-button">Read More</a>
+				</div>
+
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="service-item">
+					<img src="c3.jpg">
+				<div class="down-content">
+					<h4>Market Analysis</h4>
+					<p>It?s helpful to be able to find your child  when they?re on the go. 
+					you can locate your children on one map, as long as they?re carrying their device.**</p>
+					<a href="MarketAnalysis.html" class="filled-button">Read More</a>
+				</div>
+
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="service-item">
+					<img src="c5.jpg">
+				<div class="down-content">
+					<h4>Historical Data</h4>
+					<p>Fear of missing out (FOMO), Attachment, Sleep patterns and more.....</p>
+					<a href="Historical Data.html" class="filled-button">Read More</a>
+				</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- More Detail -->
+	<div class="more-detail">
+		<div class="container">
+			<div class="more-info-content">
+			<div class="row">
+				<div class="col-md-6">
+				<img src="t2.jpg">
+				</div>
+				<div class="col-md-6">
+					<div class="right-content">
+						<span>Who we are&#9210</span>
+						<h2>Get to know about <em>our company</em></h2>
+						<p>We have a large team that does things like blocking and filtering websites and content, logging their activities.
+						
+							<br>
+							<br>
+						        We Talk to Your Kids.</p>
+						<a href="We Talk to Your Kids.html" class="filled-button">Read More</a>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+
+
+<!-- Testimonial -->
+<div class="testimonials">
+    <div class="container" style="text-align: center;">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>What they say <em>about us</em></h2>
+                    <span style="font-size: 14px;   padding: 20px 0px; text-transform: lowercase;">
+                        "Vipin Kumar is the Director of National Innovation. 
+                        He is always on the lookout for opportunities with the potential to unleash creativity, 
+                        transform teaching and learning, optimize school operations, improve organizational culture
+                        and streamline administrative processes. He likes exploring and challenging big ideas as well
+                        as implementing and evangelizing technological solutions. Vipin enjoys presenting and writing about 
+                        digital apps, technology, education, content marketing and the Maker Movement. He has high-standards
+                        because he knows that with the right inspiration and support, everyone can be better. And he wants you to know
+                        that he is not the droid you are looking for".
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+				<div class="col-md-12">
+					<div class="row">
+					<div class="col-md-6">
+						<div class="testimonial-item">
+							<div class="testimonail-content">
+								<h4>Advisior</h4>
+								<span></span>
+								<p>"You don't have to be a investing professional, 
+								      but can create software to be used in the industry."</p>
+							</div>
+							
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="testimonial-item">
+							<div class="testimonail-content">
+								<h4>Mr Sanat.</h4>
+								<span>Founder & CEO </span>
+								<p>"Digital transformation is about how technological choices combined with policy
+								and culture choices can lead to a better organisation. As such, the entire executive
+								team must be involved early on in the planning stages and the team as a whole needs to
+								be an integral part of the ongoing process. Because digital transformation touches every part
+								of a business it needs to be championed and led by the whole senior leadership team."</p>
+							</div>
+							<div class="img">																								
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Form Section -->
+	<div class="callback-form">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-heading">
+						<h2>Request a <em>call back</em></h2>
+						<span>Just leave your information and someone from our
+						team will surely get back to you and answer all your queries...</span>
+					</div>
+				</div>
+
+				<div class="col-md-12">
+					<div class="contact-form">
+                                            <form action="HomepagcallbackController" id="contact"  method="post">
+							<div class="row">
+								<div class="col-lg-4 col-md-12 col-sm-12">
+									<fieldset>
+										<input type="text" name="name" placeholder="Full Name">
+									</fieldset>
+								</div>
+								
+								
+								<div class="col-lg-4 col-md-12 col-sm-12">
+									<fieldset>
+										<input type="text" name="mobile" placeholder="Mobile Number">
+									</fieldset>
+								</div>
+								
+								
+								<div class="col-lg-4 col-md-12 col-sm-12">
+									<fieldset>
+									</fieldset>
+								</div>
+								
+								
+								<div class="col-lg-4 col-md-12 col-sm-12">
+									<fieldset>
+										<input type="text" name="subject" placeholder="Subject">
+									</fieldset>
+								</div>
+								<div class="col-lg-12">
+									<fieldset>
+										<textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
+									</fieldset>
+								</div>
+								<div class="col-lg-12">
+									<fieldset>
+										<button type="submit" id="form-submit" class="border-button">Send Query</button>
+									</fieldset>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 footer-item">
+					<h4><span style='font-size:100px;'>&#128155;</span> </h4>
+					<p>&#128073 Dream big - Stay focused... &#128072 </p>
+                                        
+                            
+				</div>
+				
+				<div class="col-md-3 footer-item">
+					<h4>Additional Pages</h4>
+					<ul class="menu-list">
+					
+						<li><a href="OurServices(En).html">About Us</a></li>
+						<li><a href="DigitalEyes.html">How We Work</a></li>
+						<li><a href="ContactUs.html">Quick Support</a></li>
+						<li><a href="ContactUs.html">Contact Us</a></li>
+						<li><a href="ContactUs.html">Help and Support</a></li>
+						<li><a href="ContactUs.html">Careers</a></li>
+						<li><a href="Terms.html">Privacy Policy</a></li>
+					</ul>
+				</div>
+				
+						</div>
+					</div>
+	</footer>
+
+	<div class="sub-footer">
+		<div class="row">
+			<div class="col-md-12">
+				<p>Copyright © 2020 Digital tech Co.</a><br>
+            Distributed By: <a rel="nofollow noopener"target="_blank">Mr Sanat.</a>
+          </p>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+</body>
+</html>

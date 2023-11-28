@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+
+:root {
+  --color-brand-primary: hsl(var(--color-brand-primary-h), 43%, 43%);
+  --color-brand-primary-h: 251;
+  --color-brand-primary-s: 43%;
+  --color-brand-primary-l: 43%;
+  --color-brand-accent: hsl(var(--color-brand-accent-h), 96%, 61%);
+  --color-brand-accent-h: 16;
+  --color-brand-accent-s: 96%;
+  --color-brand-accent-l: 61%;
+  --color-brand-accent-bg: hsl(calc(var(--color-brand-accent-h) + 17), 100%, 96%);
+  --ratio: 1.4;
+  --s-6: calc(var(--s-5) / var(--ratio));
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: calc(1.05rem + 0.333vw);
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+  --s6: calc(var(--s5) * var(--ratio));
+  font-size: 62.5%;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+
+
+/* Disable text selection and copying */
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
+
+
+@media (min-width: 40.625em) {
+  :root {
+    --s0: calc(1.25rem + 0.333vw);
+  }
+}
+@media (min-width: 48em) {
+  :root {
+    --s0: calc(1.4rem + 0.333vw);
+  }
+}
+@media (min-width: 62em) {
+  :root {
+    --s0: calc(1.6rem + 0.333vw);
+  }
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  font-size: 1.4rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  background-color: white;
+  min-height: 100vh;
+}
+@media (min-width: 48em) {
+  body {
+    font-size: 1.5rem;
+  }
+}
+h2, h3, p, ul {
+  margin: 0;
+}
+ul {
+  padding: 0;
+}
+ul li {
+  /* Remove li Bullets with zero-width space for accessability */
+  list-style-type: none;
+}
+ul li:before {
+  content: "\200B";
+  /* add zero-width space */
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  position: absolute;
+}
+.c-section {
+  padding: 0 var(--s3);
+}
+.c-section__title {
+  padding: var(--s2) var(--s3) calc(var(--s6) * 1.8);
+  margin: 0 calc(var(--s3) * -1);
+  color: #fff;
+  font-size: var(--s4);
+  font-weight: 900;
+  text-align: center;
+}
+@media (min-width: 40.625em) {
+  .c-section__title {
+    padding: var(--s2) var(--s3) var(--s4);
+  }
+}
+@media (min-width: 40.625em) {
+  .c-section__title {
+    display: flex;
+    align-items: self-start;
+    justify-content: flex-end;
+    position: relative;
+    text-align: unset;
+  }
+}
+.c-section__title:after {
+  content: '';
+  display: block;
+  background-size: calc(var(--s5) * 3) calc(var(--s5) * 3);
+  width: calc(var(--s5) * 3);
+  height: calc(var(--s5) * 3);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(11rem);
+  z-index: 1;
+  background-image: url("");
+}
+@media (min-width: 40.625em) {
+  .c-section__title:after {
+    margin-left: auto;
+    margin-right: 0;
+    transform: translateY(2rem);
+  }
+}
+.c-section span:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  transform: skew(0deg, 10deg);
+  z-index: -1;
+  background: var(--color-brand-primary);
+  background-attachment: fixed;
+  background-image: url("");
+}
+.c-section span:after {
+  content: " " ;
+  display: block;
+  font-size: 1.4rem;
+  position: absolute;
+  font-weight: 350;
+  padding: 0 var(--s3);
+  color: rgba(255, 255, 255, 0.85);
+  left: 9px;
+}
+@media (min-width: 40.625em) {
+  .c-section span:after {
+    font-size: 23%;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-section span:after {
+    width: 47ch;
+  }
+}
+@media (min-width: 48em) {
+  .c-section span:after {
+    width: 57ch;
+  }
+}
+@media (min-width: 62em) {
+  .c-section span:after {
+    width: 67ch;
+  }
+}
+.c-services {
+  display: grid;
+  grid-gap: var(--s2);
+  margin: 0 calc(var(--s3) * -1);
+  padding: var(--s6) var(--s3);
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 40.625em) {
+  .c-services {
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: minmax(100px, 1fr);
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services {
+    padding: 0 var(--s3);
+  }
+}
+.c-services:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--color-brand-accent-bg);
+  width: 100%;
+  height: 100%;
+  transform: skew(0deg, 10deg);
+  background-image: url("");
+}
+.c-services__item {
+  background: #fff;
+  padding: calc(var(--s2) - 0.6rem) var(--s1);
+  border-radius: 25px;
+  box-shadow: 0 7px 20px rgba(100, 28, 2, 0.135);
+  transition: all 300ms ease, transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 40.625em) {
+  .c-services__item {
+    transform: translateY(-85px);
+  }
+}
+@media (min-width: 48em) {
+  .c-services__item {
+    transform: translateY(-130px);
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(1) {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(1) {
+    grid-column: 5 / -1;
+    grid-row: 3;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(2) {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(2) {
+    grid-column: 3 / span 2;
+    grid-row: auto;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(3) {
+    grid-column: 4 / -1;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(3) {
+    grid-column: 4 / -1;
+    grid-row: 2;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(4) {
+    grid-column: 1 / span 4;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(4) {
+    grid-column: 1 / span 3;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(5) {
+    grid-column: 5 / -1;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(5) {
+    grid-column: 1 / span 4;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(6) {
+    grid-column: 1 / span 4;
+    grid-row: 1;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(6) {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+}
+.c-services__item h3 {
+  color: var(--color-brand-primary);
+  font-size: var(--s1);
+  line-height: 1.2;
+}
+.c-services__item:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px 0;
+  cursor: pointer;
+  transition: inherit;
+  background-color: var(--color-brand-accent);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("");
+}
+.c-services__item p {
+  margin-top: var(--s-1);
+  font-weight: 400;
+  color: #706d7e;
+}
+.c-services__item:hover {
+  background-color: var(--color-brand-accent);
+}
+@media (min-width: 40.625em) {
+  .c-services__item:hover {
+    transform: translateY(-93px);
+  }
+}
+@media (min-width: 48em) {
+  .c-services__item:hover {
+    transform: translateY(-138px);
+  }
+}
+.c-services__item:hover h3 {
+  color: #fff;
+}
+.c-services__item:hover p {
+  color: rgba(255, 255, 255, 0.8);
+}
+.c-services__item:hover:after {
+  background-color: #fff;
+  background-image: url("");
+}
+
+a{
+    text-decoration: none;
+    padding: 10px;
+}
+.btn{
+    padding: 10px;
+    margin: 5% 47% 0px 44% ;
+}
+
+
+
+</style>
+</head>
+<body>
+
+
+
+<section class="c-section">
+    <h2 class="c-section__title"><span>Market Analysis!</span></h2>
+    <ul class="c-services">
+	
+	
+	
+        <li class="c-services__item">
+            <h3>स्मार्टफ़ोन की लत के आँकड़े !</h3>
+		
+         <p>
+			
+			COVID-19 महामारी लॉकडाउन और सामाजिक दूरी की आवश्यकताओं के बीच, स्मार्टफोन का उपयोग बढ़ गया है।<br>
+<br>संचार नियामक ऑफकॉम के अनुसार, शुरुआती हफ्तों के दौरान औसत मोबाइल फोन का उपयोग बढ़ा,<br>
+<br>यू.के. में महामारी के कारण, कॉल का समय लॉकडाउन से पहले तीन मिनट और 40 सेकंड से बढ़ गया है,
+<br>लॉकडाउन के बाद पांच मिनट और 26 सेकंड तक, फोन का बढ़ा हुआ समय जरूरी नहीं कि स्मार्टफोन का संकेत हो,<br>
+<br>कोविड-19 महामारी के कारण उत्पन्न लत; हालाँकि, संबंधित रुझान, जैसे कि ऑनलाइन जुए की बढ़ती संख्या, <br>
+<br>और गेमिंग उपयोगकर्ता, सीधे तौर पर स्मार्टफोन के बढ़ते उपयोग से संबंधित हैं, ऑनलाइन गेमिंग और जुए की लत बढ़ रही है
+<br>महामारी के बीच, वृद्धि के कारकों में अलगाव की भावनाएँ और आर्थिक मंदी के कारण वित्तीय स्थिरता में कमी शामिल है।<br>
+            <br> स्मार्टफोन की लत कोई नई बात नहीं है, अपने 2019 मोबाइल फैक्ट शीट में, प्यू रिसर्च सेंटर की रिपोर्ट है कि 81% अमेरिकियों के पास स्मार्टफोन है,
+? 2011 में 35% से ऊपर।<br> उस समय, अमेरिकियों ने अपने स्मार्टफ़ोन पर भी बहुत समय बिताया, इसे प्रतिदिन 96 बार जाँचते थे (या मोटे तौर पर
+हर 10 मिनट में एक बार),<br><br> टेक डिवाइस इंश्योरेंस और सपोर्ट फर्म असुरियन की एक रिपोर्ट के अनुसार, वास्तव में,?नोमोफोबिया? एक शब्द वह
+<br>स्मार्टफोन के बिना रहने के डर का वर्णन करता है, जो ऑनलाइन कैम्ब्रिज डिक्शनरी के अनुसार 2018 का लोगों का शब्द था।<br>
+           <br> निम्नलिखित उपयोग और स्मार्टफोन की लत के आँकड़े डिजिटल उपकरणों (पहले और पहले दोनों) पर बढ़ती निर्भरता के बारे में अतिरिक्त जानकारी प्रदान करते हैं।
+             महामारी के दौरान)।
+
+    
+ </p>
+        </li>
+		
+		 <!-- <li class="c-services__item"> -->
+            <!-- <h3>COVID-19 Made You Addicted to Your Phone??</h3> -->
+            <!-- <p> -->
+			
+
+           
+	<!-- </p> -->
+        <!-- </li> -->
+		
+		
+		 <li class="c-services__item">
+            <h3>भारतीयों को अपने फ़ोन बहुत पसंद हैं क्यों ?</h3>
+            <p>
+			COVID-19 महामारी प्रतिक्रिया के पहले 90 दिनों में उपयोग में भारी वृद्धि हुई, Verizon ने 519 बिलियन से अधिक टेक्स्ट संदेशों और उससे अधिक की सूचना दी
+            10 ट्रिलियन मेगाबाइट डेटा, 10.3 ट्रिलियन इंस्टाग्राम फ़ोटो के बराबर,<br>
+        <br>भारतीय किशोर और माता-पिता सोचते हैं कि बहुत अधिक स्क्रीन समय और डिवाइस का उपयोग एक समस्या है, प्यू रिसर्च सेंटर की रिपोर्ट है कि लगभग 55% यू.एस.
+            किशोर स्वीकार करते हैं कि वे अपने स्मार्टफ़ोन के आदी हैं, और दो-तिहाई माता-पिता चिंतित हैं,<br>
+           <br> किशोरों और किशोरों द्वारा मीडिया के उपयोग पर एक कॉमन सेंस मीडिया रिपोर्ट में कहा गया है कि किशोर हर दिन अपने फोन पर सात घंटे से अधिक समय बिताते हैं, जबकि किशोर
+            औसतन लगभग पाँच घंटे,<br>
+            <br>Reviews.org के अनुसार, अमेरिकियों को अपने फोन बहुत पसंद हैं, 75% कहते हैं कि वे इसके आदी हैं और 65% से अधिक मानते हैं कि वे अपने फोन के साथ सोते हैं।<br>
+          <br> किशोरों के लिए डिजिटल स्क्रीन और नींद के बीच एक अस्वास्थ्यकर संबंध मौजूद है; कॉमन सेंस मीडिया के अनुसार, लगभग एक-तिहाई अपने उपकरणों के साथ सोते हैं,
+            डेलॉइट की रिपोर्ट है कि 90% से अधिक लोग प्रतिदिन स्मार्टफोन का उपयोग करते हैं, और 18 से 24 वर्ष के 17% वयस्क दिन में लगभग 200 बार अपने स्मार्टफोन की जांच करते हैं।
+            प्रत्येक 7.2 मिनट के बराबर।<br>
+
+           
+	</p>
+        </li>
+		
+		
+		
+		
+		 <li class="c-services__item">
+            <h3>स्मार्टफोन का दिमाग पर असर कैसे ?</h3>
+            <p>
+			 मस्तिष्क पर स्मार्टफोन का प्रभाव
+            विशेषज्ञों का सुझाव है कि स्मार्टफोन की लत दिमाग पर नकारात्मक प्रभाव डाल सकती है। स्मार्टफोन का अत्यधिक उपयोग अस्वास्थ्यकर निर्भरता पैदा कर सकता है जो ट्रिगर हो सकता है
+            मनोवैज्ञानिक मुद्दे. मस्तिष्क पर स्मार्टफोन के प्रभाव के उदाहरणों में शामिल हैं:-<br>
+           <br> खो जाने का डर (FOMO)। कॉजेंट साइकोलॉजी में प्रकाशित शोध से पता चलता है कि स्मार्टफोन उपयोगकर्ता? चिंता को प्रबल किया जा सकता है,<br>
+          <br> खो जाने का डर, FOMO मन की एक स्थिति का वर्णन करता है जिसमें स्मार्टफोन उपयोगकर्ता अनिश्चितता से चिंतित हो जाते हैं। उदाहरण के लिए,<br>
+          <br> यह न जानने पर कि उनके दोस्त क्या कर रहे हैं, उन्हें समूह से बाहर होने का एहसास हो सकता है, परिणामस्वरूप, वे कम महत्वपूर्ण महसूस कर सकते हैं, <br>
+          <br> अपने दोस्तों के समूह के बीच, जवाब में, उन्हें लगता है कि उन्हें वर्तमान समाचारों पर अपडेट रहने के लिए नियमित रूप से अपने फोन की जांच करनी चाहिए,<br>
+          <br> अटैचमेंट, कॉजेंट साइकोलॉजी अध्ययन मस्तिष्क पर स्मार्टफोन की लत के प्रभाव के रूप में अटैचमेंट पर भी चर्चा करता है। अनुलग्नक<br>
+         <br> एक भावनात्मक बंधन का वर्णन करता है। मनोविज्ञान में, लगाव सिद्धांत मनुष्यों के बीच संबंध का वर्णन करता है, जैसे <br> के बीच
+         <br> नवजात शिशु और एक माँ, और अलगाव का अनुभव, जो बच्चों में चिंता और परेशानी पैदा कर सकता है, इसी तरह, स्मार्टफोन<br>
+          <br> उपयोगकर्ता? लगाव उस चिंता और तनाव को संदर्भित करता है जो वे अपने फोन से अलग होने पर महसूस करते हैं,<br>
+          <br> नींद के पैटर्न, स्मार्टफोन की लत भी नींद के पैटर्न को प्रभावित कर सकती है, फ्रंटियर्स इन साइकियाट्री में प्रकाशित एक अध्ययन की जांच की गई।<br>
+		  
+
+           
+	</p>
+        </li>
+		
+		
+		 <li class="c-services__item">
+            <h3>कैसे स्मार्टफोन की लत ने नींद की गुणवत्ता को कम कर दिया .</h3>
+            <p>
+			 कैसे स्मार्टफोन की लत ने 1164 विश्वविद्यालय छात्रों की नींद की गुणवत्ता को कम कर दिया। इसमें पाया गया कि नींद में खलल व्याप्त था
+          लगभग 16% छात्रों के बीच,<br>
+         <br> स्मार्टफोन की लत के अन्य मनोवैज्ञानिक प्रभावों में अवसाद, चिंता और व्यवहार संबंधी और बाध्यकारी विकार शामिल हैं
+         <br> उदाहरण के लिए, सोशल मीडिया ऐप्स उपयोगकर्ताओं को दूसरों के साथ अपनी तुलना करने के लिए प्रेरित कर सकते हैं, जिससे उनमें अवसाद की भावना बढ़ सकती है, अतिरिक्त
+        <br> लोगों के जीवन पर स्मार्टफोन की लत के मनोवैज्ञानिक प्रभावों में फोकस की हानि और नकारात्मक व्यक्तित्व लक्षण शामिल हैं
+         आत्म-अवशोषण.
+           
+	</p>
+        </li>
+		
+		 <li class="c-services__item">
+            <h3>मस्तिष्क में शारीरिक परिवर्तन. </h3>
+            <p>
+			 शोध स्मार्टफोन के अत्यधिक उपयोग के कारण मस्तिष्क में होने वाले शारीरिक परिवर्तनों की ओर भी इशारा करता है,<br> एडिक्टिव बिहेवियर्स में प्रकाशित एक हालिया अध्ययन में,
+         <br>शोधकर्ताओं ने 18 से 30 साल के बच्चों के एक छोटे समूह की एमआरआई छवियों का विश्लेषण किया, जो स्मार्टफोन की लत के मानदंडों को पूरा करते थे,<br> एमआरआई डेटा
+       <br> पता चला? इंसुला और टेम्पोरल कॉर्टेक्स में ग्रे मैटर की मात्रा कम है? मस्तिष्क की गतिविधि का एक माप जो शारीरिक परिवर्तनों का संकेत देता है
+         मस्तिष्क और मादक द्रव्यों के सेवन की लत से जुड़ा हुआ।
+
+           
+	</p>
+        </li>
+		
+		
+		 <li class="c-services__item">
+            <h3>कौन तीन घंटे से अधिक समय बिताता है?</h3>
+            <p>
+			अमेरिकी किशोर जो सोशल मीडिया पर प्रतिदिन तीन घंटे से अधिक समय बिताते हैं, उनमें संभावित रूप से मानसिक स्वास्थ्य समस्याओं का खतरा अधिक होता है
+        जामा मनोरोग अध्ययन के अनुसार, समस्याओं को आंतरिक बनाना
+       <br> अत्यधिक स्मार्टफोन और सोशल मीडिया का उपयोग युवाओं में मानसिक परेशानी, आत्म-हानिकारक व्यवहार और आत्महत्या की प्रवृत्ति बढ़ा सकता है; प्रभाव
+        कैनेडियन मेडिकल एसोसिएशन जर्नल में प्रकाशित शोध के अनुसार, लड़कियों में यह दर अधिक है
+      <br> स्मार्टफोन के आदी व्यक्तियों को अक्सर अकेलेपन का अनुभव होता है। इसके गंभीर मानसिक और शारीरिक स्वास्थ्य प्रभाव हो सकते हैं,
+        जैसे कम नींद की गुणवत्ता और कम प्रतिरक्षा प्रणाली कार्य,<br>
+      <br> एक बार जब स्मार्टफोन उपयोगकर्ता बार-बार नकारात्मक खबरों पर नजर रखने की आदत में पड़ जाते हैं, तो उनका मूड खराब हो सकता है और वे अधिक चिंतित हो सकते हैं।
+        इस प्रकार की गतिविधि को ?doomscrolling?<br> के रूप में भी जाना जाता है
+       <br> COVID-19 महामारी के दौरान माता-पिता द्वारा स्मार्टफोन का बढ़ता उपयोग बच्चों के विकास को प्रभावित कर सकता है।
+        संसाधन: स्मार्टफोन की लत का मानसिक स्वास्थ्य पर प्रभाव<br>
+      <br> निम्नलिखित अध्ययनों सहित संसाधनों के उपयोगी लिंक हैं, जो मस्तिष्क पर स्मार्टफोन के प्रभाव पर अंतर्दृष्टि, मार्गदर्शन और अन्य जानकारी प्रदान करते हैं।
+
+           
+	</p>
+        </li>
+		
+        <li class="c-services__item">
+            <h3>क्या COVID-19 ने आपको फ़ोन का आदी बना दिया है ?</h3>
+            <p>
+			हैकेंसैक मेरिडियन हेल्थ, ?क्या कोविड-19 ने आपको फोन का आदी बना दिया है?? ? डिजिटल निर्भरता, जो स्मार्टफोन पर निर्भरता का वर्णन करती है और
+       सोशल मीडिया, मानसिक स्वास्थ्य समस्याओं को जन्म दे सकता है,<br>
+      <br> जॉन्स हॉपकिन्स ऑल चिल्ड्रन हॉस्पिटल, ?इलेक्ट्रॉनिक उपकरणों की लत? ? यह संसाधन सेलफोन की लत का विवरण और संकेत प्रदान करता है,
+       इसमें यह भी शामिल है कि यह रिश्तों को कैसे प्रभावित करता है,<br>
+      <br> टेक टाइम्स, ?एमआरआई दिखाते हैं कि स्मार्टफोन की लत आपके दिमाग को कितना नुकसान पहुंचा सकती है? ? इस बात के प्रमाण बढ़ रहे हैं कि स्मार्टफोन की लत हो सकती है
+       आपके मस्तिष्क को शारीरिक रूप से प्रभावित करते हैं, जिसमें उसका आकार और आकृति बदलना भी शामिल है।
+
+           
+			</p>
+        </li>
+		
+		
+		
+        <li class="c-services__item">
+            <h3>पहला कदम समस्या को पहचानना है।</h3>
+            <p>
+			उन ट्रिगर्स को पहचानें जो आपको स्मार्टफोन का उपयोग करने के लिए मजबूर करते हैं।<br> पहला कदम समस्या को पहचानना है। उदाहरण के लिए,
+<br>स्मार्टफोन आपको अवसाद, <br>तनाव या चिंता के कारण होने वाले मूड स्विंग से विचलित कर सकता है। लेकिन स्मार्टफोन के लिए पहुंच रहे हैं
+ये मानसिक स्वास्थ्य संबंधी समस्याएं बदतर बना सकती हैं।<br> विश्राम और तनाव प्रबंधन तकनीकों सहित स्वस्थ विकल्प आज़माएं।<br>
+            समझें कि व्यक्तिगत बातचीत ऑनलाइन बातचीत से कैसे भिन्न होती है।<br> सामाजिक चिंता और परहेज़ लोगों में आम है
+स्मार्टफोन की लत. दूसरों के साथ फिर से जुड़ने के लिए समय निकालने से आपको अलगाव की भावनाओं को कम करने में मदद मिल सकती है।<br>
+            <br>मुकाबला कौशल विकसित करें। फ़ोन का उपयोग सीमित करना निराशाजनक हो सकता है. लेकिन इंसान जितना मुश्किलों से पार पाता है, उतना ही आगे बढ़ता है
+<br> वे लचीले बन जाते हैं। संबंधपरक संबंध, जैसे कि किसी मित्र के साथ अच्छी बातचीत, आपको शांत महसूस करने में काफी मदद कर सकती है,
+दूसरों को आपको बेहतर ढंग से समझने में मदद करना और आपका लचीलापन बढ़ाना।<br>
+         <br> स्मार्टफोन के उपयोग को संशोधित करें। अपना फ़ोन दूर रखना एक साधारण कदम जैसा लग सकता है। फिर भी, स्मार्टफोन की लत वाले व्यक्तियों के लिए।<br>
+<br> अपने स्मार्टफ़ोन से वापस लेना कठिन हो सकता है। सूचनाएं बंद करने, समय सीमा निर्धारित करने और सोशल मीडिया सीमित करने वाले ऐप्स का उपयोग करने का प्रयास करें।
+			</p>
+        </li>
+		
+		
+		
+        <li class="c-services__item">
+            <h3>स्मार्टफोन की लत कैसे तोड़ें।</h3>
+            <p>
+			स्मार्टफ़ोन को उपयोगकर्ताओं को उनकी स्क्रीन से चिपकाए रखने के लिए डिज़ाइन किया गया है।<br> और पुश नोटिफिकेशन ऐसा करने के लिए उपयोग की जाने वाली एक तकनीक है।
+पुश नोटिफिकेशन तब होता है जब उपयोगकर्ता द्वारा अनुरोध शुरू किए बिना सर्वर से डिवाइस पर एक संदेश भेजा जाता है।<br>
+<br>ये सूचनाएं ध्वनि, अलर्ट और छवियों के साथ आती हैं जो स्मार्टफोन उपयोगकर्ताओं को आकर्षित करती हैं? ध्यान दें, उन्हें आमंत्रित करें
+<br>किसी चीज़ से जुड़ें। उपयोगकर्ता के व्यवहार और प्राथमिकताओं की भविष्यवाणी करने वाले एल्गोरिदम और उपयोगकर्ता के अनुकूल इंटरफेस भी इसे बनाते हैं
+लोगों के लिए सामग्री को स्क्रॉल करना आसान है।<br>
+            <br> हर कोई आदी नहीं बनता है, लेकिन जिन लोगों में स्मार्टफोन की लत के लक्षण दिखाई दे रहे हैं, उनके लिए निम्नलिखित युक्तियां और रणनीतियां हैं
+स्मार्टफोन की लत को कैसे छुड़ाएं, इससे मदद मिल सकती है।<br>
+
+           
+			</p>
+        </li>
+		
+		
+		
+		
+    </ul>
+</section>
+
+<button class="btn"><a href="index.html">HomePage</a></button>
+
+
+
+<script>
+document.getElementById("enableCopy").addEventListener("click", function() {
+  // Enable text selection and copying
+  document.body.style.userSelect = "auto";
+  document.body.style.webkitUserSelect = "auto";
+  document.body.style.mozUserSelect = "auto";
+  document.body.style.msUserSelect = "auto";
+  document.body.style.pointerEvents = "auto";
+});
+</script>
+
+
+
+
+</body>
+</html>

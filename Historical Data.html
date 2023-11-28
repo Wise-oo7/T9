@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+
+:root {
+  --color-brand-primary: hsl(var(--color-brand-primary-h), 43%, 43%);
+  --color-brand-primary-h: 251;
+  --color-brand-primary-s: 43%;
+  --color-brand-primary-l: 43%;
+  --color-brand-accent: hsl(var(--color-brand-accent-h), 96%, 61%);
+  --color-brand-accent-h: 16;
+  --color-brand-accent-s: 96%;
+  --color-brand-accent-l: 61%;
+  --color-brand-accent-bg: hsl(calc(var(--color-brand-accent-h) + 17), 100%, 96%);
+  --ratio: 1.4;
+  --s-6: calc(var(--s-5) / var(--ratio));
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: calc(1.05rem + 0.333vw);
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+  --s6: calc(var(--s5) * var(--ratio));
+  font-size: 62.5%;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+
+
+/* Disable text selection and copying */
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
+
+
+@media (min-width: 40.625em) {
+  :root {
+    --s0: calc(1.25rem + 0.333vw);
+  }
+}
+@media (min-width: 48em) {
+  :root {
+    --s0: calc(1.4rem + 0.333vw);
+  }
+}
+@media (min-width: 62em) {
+  :root {
+    --s0: calc(1.6rem + 0.333vw);
+  }
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  font-size: 1.4rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  background-color: white;
+  min-height: 100vh;
+}
+@media (min-width: 48em) {
+  body {
+    font-size: 1.5rem;
+  }
+}
+h2, h3, p, ul {
+  margin: 0;
+}
+ul {
+  padding: 0;
+}
+ul li {
+  /* Remove li Bullets with zero-width space for accessability */
+  list-style-type: none;
+}
+ul li:before {
+  content: "\200B";
+  /* add zero-width space */
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  position: absolute;
+}
+.c-section {
+  padding: 0 var(--s3);
+}
+.c-section__title {
+  padding: var(--s2) var(--s3) calc(var(--s6) * 1.8);
+  margin: 0 calc(var(--s3) * -1);
+  color: #fff;
+  font-size: var(--s4);
+  font-weight: 900;
+  text-align: center;
+}
+@media (min-width: 40.625em) {
+  .c-section__title {
+    padding: var(--s2) var(--s3) var(--s4);
+  }
+}
+@media (min-width: 40.625em) {
+  .c-section__title {
+    display: flex;
+    align-items: self-start;
+    justify-content: flex-end;
+    position: relative;
+    text-align: unset;
+  }
+}
+
+a{
+    text-decoration: none;
+    padding: 10px;
+}
+.btn{
+    padding: 10px;
+    margin: 5% 47% 0px 44% ;
+}
+.c-section__title:after {
+  content: '';
+  display: block;
+  background-size: calc(var(--s5) * 3) calc(var(--s5) * 3);
+  width: calc(var(--s5) * 3);
+  height: calc(var(--s5) * 3);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(11rem);
+  z-index: 1;
+  background-image: url("");
+}
+@media (min-width: 40.625em) {
+  .c-section__title:after {
+    margin-left: auto;
+    margin-right: 0;
+    transform: translateY(2rem);
+  }
+}
+.c-section span:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  transform: skew(0deg, 10deg);
+  z-index: -1;
+  background: var(--color-brand-primary);
+  background-attachment: fixed;
+  background-image: url("");
+}
+.c-section span:after {
+  content: " " ;
+  display: block;
+  font-size: 1.4rem;
+  position: absolute;
+  font-weight: 350;
+  padding: 0 var(--s3);
+  color: rgba(255, 255, 255, 0.85);
+  left: 9px;
+}
+@media (min-width: 40.625em) {
+  .c-section span:after {
+    font-size: 23%;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-section span:after {
+    width: 47ch;
+  }
+}
+@media (min-width: 48em) {
+  .c-section span:after {
+    width: 57ch;
+  }
+}
+@media (min-width: 62em) {
+  .c-section span:after {
+    width: 67ch;
+  }
+}
+.c-services {
+  display: grid;
+  grid-gap: var(--s2);
+  margin: 0 calc(var(--s3) * -1);
+  padding: var(--s6) var(--s3);
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 40.625em) {
+  .c-services {
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: minmax(100px, 1fr);
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services {
+    padding: 0 var(--s3);
+  }
+}
+.c-services:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--color-brand-accent-bg);
+  width: 100%;
+  height: 100%;
+  transform: skew(0deg, 10deg);
+  background-image: url("");
+}
+.c-services__item {
+  background: #fff;
+  padding: calc(var(--s2) - 0.6rem) var(--s1);
+  border-radius: 25px;
+  box-shadow: 0 7px 20px rgba(100, 28, 2, 0.135);
+  transition: all 300ms ease, transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 40.625em) {
+  .c-services__item {
+    transform: translateY(-85px);
+  }
+}
+@media (min-width: 48em) {
+  .c-services__item {
+    transform: translateY(-130px);
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(1) {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(1) {
+    grid-column: 5 / -1;
+    grid-row: 3;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(2) {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(2) {
+    grid-column: 3 / span 2;
+    grid-row: auto;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(3) {
+    grid-column: 4 / -1;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(3) {
+    grid-column: 4 / -1;
+    grid-row: 2;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(4) {
+    grid-column: 1 / span 4;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(4) {
+    grid-column: 1 / span 3;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(5) {
+    grid-column: 5 / -1;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(5) {
+    grid-column: 1 / span 4;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(6) {
+    grid-column: 1 / span 4;
+    grid-row: 1;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(6) {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+}
+.c-services__item h3 {
+  color: var(--color-brand-primary);
+  font-size: var(--s1);
+  line-height: 1.2;
+}
+.c-services__item:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px 0;
+  cursor: pointer;
+  transition: inherit;
+  background-color: var(--color-brand-accent);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("");
+}
+.c-services__item p {
+  margin-top: var(--s-1);
+  font-weight: 400;
+  color: #706d7e;
+}
+.c-services__item:hover {
+  background-color: var(--color-brand-accent);
+}
+@media (min-width: 40.625em) {
+  .c-services__item:hover {
+    transform: translateY(-93px);
+  }
+}
+@media (min-width: 48em) {
+  .c-services__item:hover {
+    transform: translateY(-138px);
+  }
+}
+.c-services__item:hover h3 {
+  color: #fff;
+}
+.c-services__item:hover p {
+  color: rgba(255, 255, 255, 0.8);
+}
+.c-services__item:hover:after {
+  background-color: #fff;
+  background-image: url("");
+}
+
+
+</style>
+</head>
+<body>
+
+
+
+<section class="c-section">
+    <h2 class="c-section__title"><span>Historical Data!</span></h2>
+    <ul class="c-services">
+	
+	
+	
+        <li class="c-services__item">
+            <h3>क्यों? यह आपको कम कनेक्टेड बनाता है.</h3>
+            <p>
+			कभी-कभी ऐसा करना हानिकारक होने की संभावना नहीं है (आखिरकार, हम सभी को कभी-कभी प्रतीक्षा करने की आवश्यकता होती है
+कार्यस्थल से किसी महत्वपूर्ण ईमेल के लिए या किसी अत्यावश्यक या समय पर किसी मित्र के संदेश का उत्तर देने के लिए)।
+लेकिन समस्या तब होती है जब आप हर कुछ मिनटों में या एक घंटे में कई बार अपने टेक्स्ट और ईमेल की जाँच करते हैं,
+और ये सभी "मैं बस अपने संदेशों की जांच करूंगा" क्षण फोन पर बिताए गए समय की एक बड़ी मात्रा को जोड़ते हैं।<br>
+
+            <br><br> इससे पहले कि आप इसे जानें या इसका एहसास करें, आप उस समय का एक अच्छा हिस्सा उपयोग कर रहे होंगे जो आपको अपने साथ बिताना चाहिए।
+             पार्टनर या बच्चे आपके परिवार के बजाय आपके फोन पर ध्यान केंद्रित कर रहे हैं।<br>
+             और यह देखते हुए कि आज परिवार कितने व्यस्त हैं, हम जो भी समय फोन पर बिताते हैं वह एक बड़ी कीमत है। "जितना अधिक कीमती,
+            <br><br> जितना आपका समय है, उतना ही अधिक आपको इस बारे में सतर्क रहने की आवश्यकता है कि आप इसे कैसे खर्च करते हैं,'' जेम्स ए. रॉबर्ट्स, पीएच.डी., मार्केटिंग के प्रोफेसर कहते हैं।
+             बायलर यूनिवर्सिटी में और टू मच ऑफ ए गुड थिंग के लेखक: क्या आप अपने सेल फोन के आदी हैं? उनकी सलाह है: हमारे पास है
+            पति-पत्नी या माता-पिता-बच्चे के बीच सेलफोन से मुक्त समय निर्धारित करने के लिए।<br>
+
+           <br> जब आप किसी के साथ होते हैं और वह लगातार अपने सेल फोन को चेक कर रहा है, स्क्रॉल कर रहा है, टेक्स्ट कर रहा है या अपने हाथ में सेल फोन ले रहा है, तो यह
+            ऐसा महसूस हो सकता है कि आप वास्तव में उस व्यक्ति के साथ पूरी तरह से नहीं हैं। "जब आप बातचीत करते हैं, तो यह एक स्पष्ट संदेश भेजता है कि आप कौन हैं
+            दूसरी भूमिका निभाना,'' डॉ. रॉबर्ट्स कहते हैं। यह व्यवहार न केवल असभ्य है, बल्कि यह उस रिश्ते की गुणवत्ता को नुकसान पहुंचा सकता है।<br><br>
+
+           <br> वाको, टेक्सास में बायलर यूनिवर्सिटी के हैंकेमर स्कूल ऑफ बिजनेस में फबिंग पर किए गए डॉ. रॉबर्ट्स के अध्ययन में पाया गया कि
+            सर्वेक्षण में शामिल लगभग आधे वयस्कों ने बताया कि उन्हें अपने साथी द्वारा धोखा दिया गया था, एक तिहाई से अधिक ने कहा कि उन्हें अवसाद महसूस हुआ
+            यह इस व्यवहार का परिणाम है, और लगभग एक चौथाई ने कहा कि इससे उनके रिश्तों में टकराव पैदा हुआ।<br><br>
+
+          <br> डॉ. रॉबर्ट्स कहते हैं, "रिश्ते हमारी ख़ुशी की आधारशिला हैं।" "फ़बिंग से हमें बुरा लगता है, लेकिन इससे भी बुरा यह होता है
+            दुःख और अवसाद के लिए।" यहां तक कि एक विकासवादी व्याख्या भी है कि जब हम किसी के साथ होते हैं तो हम इतना असहज क्यों महसूस करते हैं
+            जो उस पल में पूरी तरह से हमारे साथ नहीं है।<br><br>
+
+         <br> "यह सामाजिक कंडीशनिंग का उल्लंघन है," द सेंटर फॉर इंटरनेट एंड टेक्नोलॉजी एडिक्शन के संस्थापक, पीएचडी, डेविड ग्रीनफील्ड कहते हैं।
+           और फार्मिंगटन, कनेक्टिकट में यूनिवर्सिटी ऑफ कनेक्टिकट स्कूल ऑफ मेडिसिन में मनोचिकित्सा के सहायक नैदानिक ​​प्रोफेसर,
+           "जब व्यवहार का अनुमान नहीं लगाया जा सकता तो यह एक असहज भावना होती है। जब कोई हमारे साथ कमरे में होता है और फोन पर बात करता है, तो हमें ऐसा महसूस होता है
+           हम आदिम स्तर पर असुरक्षित स्थिति में हैं।"
+			</p>
+        </li>
+		
+		
+        <li class="c-services__item">
+            <h3>उपयोग कम करने की रणनीतियाँ ।</h3>
+            <p>
+			अपने सेल फ़ोन के उपयोग को कम करने के तरीकों के लिए इन रणनीतियों को आज़माएँ।<br>
+             <br>अपने घर में एक नियम स्थापित करें कि रात में एक निश्चित समय के बाद फोन का उपयोग नहीं किया जाएगा (या ईमेल करना या सोशल मीडिया पर पोस्ट करना आदि)।<br><br>
+             यदि आपको ऐसा लगता है कि लगातार फोन का उपयोग न करने से आपको कठिनाई हो रही है, तो मदद मांगने पर विचार करें। शोध से पता चलता है कि सेल फोन की लत वास्तविक है,<br>
+<br>और यदि आपको लगता है कि आपके पास नियंत्रण नहीं है, तो किसी ऐसे चिकित्सक से बात करें जो व्यसन परामर्श में विशेषज्ञ हो।
+            <br> रात के खाने के समय को सेल फोन से मुक्त रखें, और इसे एक-दूसरे के साथ फिर से जुड़ने और अपने दिन के बारे में बात करने के अवसर के रूप में उपयोग करें।?
+             अपने जीवनसाथी के साथ समय बिताएं? जैसे डेट नाइट या सोने से एक दिन पहले कुछ बातें करना? सेल फोन से मुक्त।<br><br>
+             आपके बच्चे अपने फ़ोन का कितना उपयोग करते हैं, इस पर नज़र रखने के लिए एक ऐप का उपयोग करें, और अपने स्वयं के उपयोग को ट्रैक करने के लिए इसका उपयोग करें।
+			</p>
+        </li>
+		
+		
+		
+    </ul>
+</section>
+    <button class="btn"><a href="index.html">HomePage</a></button>
+
+
+
+
+<script>
+document.getElementById("enableCopy").addEventListener("click", function() {
+  // Enable text selection and copying
+  document.body.style.userSelect = "auto";
+  document.body.style.webkitUserSelect = "auto";
+  document.body.style.mozUserSelect = "auto";
+  document.body.style.msUserSelect = "auto";
+  document.body.style.pointerEvents = "auto";
+});
+</script>
+
+
+
+</body>
+</html>

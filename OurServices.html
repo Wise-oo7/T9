@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+
+:root {
+  --color-brand-primary: hsl(var(--color-brand-primary-h), 43%, 43%);
+  --color-brand-primary-h: 251;
+  --color-brand-primary-s: 43%;
+  --color-brand-primary-l: 43%;
+  --color-brand-accent: hsl(var(--color-brand-accent-h), 96%, 61%);
+  --color-brand-accent-h: 16;
+  --color-brand-accent-s: 96%;
+  --color-brand-accent-l: 61%;
+  --color-brand-accent-bg: hsl(calc(var(--color-brand-accent-h) + 17), 100%, 96%);
+  --ratio: 1.4;
+  --s-6: calc(var(--s-5) / var(--ratio));
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: calc(1.05rem + 0.333vw);
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+  --s6: calc(var(--s5) * var(--ratio));
+  font-size: 62.5%;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+
+/* Disable text selection and copying */
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
+
+
+@media (min-width: 40.625em) {
+  :root {
+    --s0: calc(1.25rem + 0.333vw);
+  }
+}
+@media (min-width: 48em) {
+  :root {
+    --s0: calc(1.4rem + 0.333vw);
+  }
+}
+@media (min-width: 62em) {
+  :root {
+    --s0: calc(1.6rem + 0.333vw);
+  }
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  font-size: 1.4rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  background-color: white;
+  min-height: 100vh;
+}
+@media (min-width: 48em) {
+  body {
+    font-size: 1.5rem;
+  }
+}
+h2, h3, p, ul {
+  margin: 0;
+}
+ul {
+  padding: 0;
+}
+ul li {
+  /* Remove li Bullets with zero-width space for accessability */
+  list-style-type: none;
+}
+ul li:before {
+  content: "\200B";
+  /* add zero-width space */
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  position: absolute;
+}
+.c-section {
+  padding: 0 var(--s3);
+}
+.c-section__title {
+  padding: var(--s2) var(--s3) calc(var(--s6) * 1.8);
+  margin: 0 calc(var(--s3) * -1);
+  color: #fff;
+  font-size: var(--s4);
+  font-weight: 900;
+  text-align: center;
+}
+@media (min-width: 40.625em) {
+  .c-section__title {
+    padding: var(--s2) var(--s3) var(--s4);
+  }
+}
+@media (min-width: 40.625em) {
+  .c-section__title {
+    display: flex;
+    align-items: self-start;
+    justify-content: flex-end;
+    position: relative;
+    text-align: unset;
+  }
+}
+.c-section__title:after {
+  content: '';
+  display: block;
+  background-size: calc(var(--s5) * 3) calc(var(--s5) * 3);
+  width: calc(var(--s5) * 3);
+  height: calc(var(--s5) * 3);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(11rem);
+  z-index: 1;
+  background-image: url("");
+}
+@media (min-width: 40.625em) {
+  .c-section__title:after {
+    margin-left: auto;
+    margin-right: 0;
+    transform: translateY(2rem);
+  }
+}
+
+
+a{
+    text-decoration: none;
+    padding: 10px;
+}
+.btn{
+    padding: 10px;
+    margin: 5% 49% 0px 39% ;
+}
+.c-section span:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  transform: skew(0deg, 10deg);
+  z-index: -1;
+  background: var(--color-brand-primary);
+  background-attachment: fixed;
+  background-image: url("");
+}
+.c-section span:after {
+  content: "बच्चे की जिद ऐसी होती है कि ज्यादातर माता-पिता हार जाते हैं। ये जिद है स्मार्टफोन की बच्चा चाहे छोटा हो या बड़ा, जब भी मौका मिलता है वे स्मार्ट फोन से चिपक जाते हैं , और आपतिजनक चीजें देखते हैं वे फोन की फोटो गैलरी, वीडियो, गेम, यूट्यूब, व्हाट्सएप और अन्य सोशल अकाउंट पर जाते हैं और अपना बहुमूल्य समय बर्बाद करते रहते हैं , चलिए और इसके बारे में जानते हैं...." ;
+  display: block;
+  font-size: 1.4rem;
+  position: absolute;
+  font-weight: 350;
+  padding: 0 var(--s3);
+  color: rgba(255, 255, 255, 0.85);
+  left: 9px;
+}
+@media (min-width: 40.625em) {
+  .c-section span:after {
+    font-size: 23%;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-section span:after {
+    width: 47ch;
+  }
+}
+@media (min-width: 48em) {
+  .c-section span:after {
+    width: 57ch;
+  }
+}
+@media (min-width: 62em) {
+  .c-section span:after {
+    width: 67ch;
+  }
+}
+.c-services {
+  display: grid;
+  grid-gap: var(--s2);
+  margin: 0 calc(var(--s3) * -1);
+  padding: var(--s6) var(--s3);
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 40.625em) {
+  .c-services {
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: minmax(100px, 1fr);
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services {
+    padding: 0 var(--s3);
+  }
+}
+.c-services:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--color-brand-accent-bg);
+  width: 100%;
+  height: 100%;
+  transform: skew(0deg, 10deg);
+  background-image: url("");
+}
+.c-services__item {
+  background: #fff;
+  padding: calc(var(--s2) - 0.6rem) var(--s1);
+  border-radius: 25px;
+  box-shadow: 0 7px 20px rgba(100, 28, 2, 0.135);
+  transition: all 300ms ease, transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 40.625em) {
+  .c-services__item {
+    transform: translateY(-85px);
+  }
+}
+@media (min-width: 48em) {
+  .c-services__item {
+    transform: translateY(-130px);
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(1) {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(1) {
+    grid-column: 5 / -1;
+    grid-row: 3;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(2) {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(2) {
+    grid-column: 3 / span 2;
+    grid-row: auto;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(3) {
+    grid-column: 4 / -1;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(3) {
+    grid-column: 4 / -1;
+    grid-row: 2;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(4) {
+    grid-column: 1 / span 4;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(4) {
+    grid-column: 1 / span 3;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(5) {
+    grid-column: 5 / -1;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(5) {
+    grid-column: 1 / span 4;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(6) {
+    grid-column: 1 / span 4;
+    grid-row: 1;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(6) {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+}
+.c-services__item h3 {
+  color: var(--color-brand-primary);
+  font-size: var(--s1);
+  line-height: 1.2;
+}
+.c-services__item:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px 0;
+  cursor: pointer;
+  transition: inherit;
+  background-color: var(--color-brand-accent);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("");
+}
+.c-services__item p {
+  margin-top: var(--s-1);
+  font-weight: 400;
+  color: #706d7e;
+}
+.c-services__item:hover {
+  background-color: var(--color-brand-accent);
+}
+@media (min-width: 40.625em) {
+  .c-services__item:hover {
+    transform: translateY(-93px);
+  }
+}
+@media (min-width: 48em) {
+  .c-services__item:hover {
+    transform: translateY(-138px);
+  }
+}
+.c-services__item:hover h3 {
+  color: #fff;
+}
+.c-services__item:hover p {
+  color: rgba(255, 255, 255, 0.8);
+}
+.c-services__item:hover:after {
+  background-color: #fff;
+  background-image: url("");
+}
+
+
+</style>
+</head>
+<body>
+
+
+
+<section class="c-section">
+    <h2 class="c-section__title"><span>Our Blog! </span></h2>
+    <ul class="c-services">
+        <li class="c-services__item">
+            <h3>फ्रॉड का टेंशन भी अभी लॉक करें.</h3>
+            <p>बच्चों के हाथ में स्मार्टफोन देने से ऑनलाइन धोखाधड़ी या लेनदेन का खतरा भी बढ़ जाता है।<br>
+<br>ऐसे कई मामले सामने आए हैं जिनमें बच्चे की एक गलती के कारण माता-पिता का पूरा बैंक खाता खाली हो गया।<br>
+<br>बच्चों को कभी-कभी ऐसे गेम की लत लग जाती है, जिसमें बच्चे अच्छे हथियारों के लालच में खेलते हैं और पॉइंट कमाते हैं।<br>
+उन्हें खरीदने के लिए मजबूर किया जाता है. उन्हें नहीं पता कि माता-पिता के खाते से कितना पैसा खर्च होगा।<br>
+<br>खेलों में लाखों माता-पिता को बर्बाद करने के लिए बच्चे कितने जिम्मेदार हैं?
+                                 <br><br>गेम को अपग्रेड करने के लिए बच्चे लाखों रुपए खर्च करते हैं।
+                                 फाइटिंग गेम्स में वे लाखों रुपए के हथियार खरीदते हैं
+                                 फ्री गेम देकर कंपनियां अपनी सर्विस से ले रही हैं लाखों रुपए
+                                <br><br> माता-पिता की गलती के कारण बच्चे लेन-देन करने में सफल हो रहे हैं।
+<br>जब भी हम ऑनलाइन प्लेटफॉर्म के जरिए पेमेंट करते हैं तो वे हमारे डेबिट कार्ड, क्रेडिट कार्ड की डिटेल सेव कर लेते हैं।<br>
+<br>इन सॉफ़्टवेयर में ऑनलाइन कुंजी लॉगर हैं। ऐसे में ये डेटा वहां फीड हो जाता है. इससे डेटा की सुरक्षा भी कम हो जाती है. गेमिंग या<br>
+   <br><br>अन्य ऐप्स से बैंक खाते से पैसे निकलने का खतरा रहता है। कई ऐप्स में ट्रोजन या अन्य मैलवेयर भी होते हैं। ये फोन में इंस्टॉल होते हैं और आपका डेटा चुरा लेते हैं.</p>
+        </li>
+        <li class="c-services__item">
+            <h3>बच्चा कहां घूम रहा है लोकेशन पता करें.</h3>
+            <p>इस ऐप की मदद से आपके बच्चे का पता भी लगाया जा सकता है।<br>
+<br>इसके लिए आपको बच्चे के फोन में ऐप इंस्टॉल करना होगा और लोकेशन मोड ऑन रखना होगा।
+<br>इसका फायदा यह है कि जब बच्चा कहीं जाता है तो आप अपने फोन पर उसकी लोकेशन ट्रैक कर सकते हैं।</p>
+        </li>
+        <li class="c-services__item">
+            <h3>ज्यादा चलाये तो फ़ोन लॉक करो .</h3>
+            <p>यदि बच्चा देर रात तक जागकर फोन देखता रहता है, या परिवार के समय आपसे दूर रहता है,<br>
+<br>फिर इसके लिए फोन को लॉक भी किया जा सकता है। यानी फोन तो अनलॉक रहेगा, लेकिन बच्चा उस तक नहीं पहुंच पाएगा। </p>
+        </li>
+        <li class="c-services__item">
+            <h3>बच्चों की गतिविधियों को ट्रैक करें.</h3>
+            <p>
+                ऐप यह ट्रैक कर सकता है कि बच्चे स्मार्टफोन या टैबलेट पर कितना समय बिता रहे हैं।<br>
+<br>ऐप पर यह जानकारी है कि बच्चों ने फोन पर कौन-कौन से ऐप खोले। आपने उन पर कितना समय बिताया?<br>
+<br>अगर कोई ऐप इंस्टॉल करके डिलीट कर दिया गया है तो उसकी डिटेल भी यहां दिखेगी. इन बातों को जानकर आप बच्चे का मार्गदर्शन कर सकते हैं।
+			
+		</p>
+        </li>
+        <li class="c-services__item">
+            <h3>बेकार ऐप्स को बैन करें</h3>
+            <p>यदि आपको बच्चे की स्मार्टफोन गतिविधि के दौरान कोई ऐसा ऐप दिखाई देता है जो अनावश्यक है,<br>
+<br>तब आप उस पर प्रतिबंध लगा सकते हैं। अगर बच्चे ने Google Play Store से कोई ऐप इंस्टॉल किया है तो आप Play Store को बैन भी कर सकते हैं।<br>
+<br>इतना ही नहीं, स्मार्टफोन में ऐप्स भी बैन हो सकते हैं।</p>
+        </li>
+        <li class="c-services__item">
+            <h3>फ़ोन चलाने का समय निर्धारित करें.</h3>
+            <p> अगर आपके बच्चे को घंटों स्मार्टफोन इस्तेमाल करने की आदत है, तो आप ऐप की मदद से उसे भी कंट्रोल कर पाएंगे।<br>
+            <br>ऐप में आपको बच्चे के लिए समय सीमा निर्धारित करने का विकल्प मिलता है,<br> जैसे ही आपके द्वारा निर्धारित समय सीमा खत्म हो जाएगी, स्मार्टफोन अपने आप लॉक हो जाएगा। &rsquo;</p>
+        </li>
+    </ul>
+</section>
+
+ 
+<script>
+document.getElementById("enableCopy").addEventListener("click", function() {
+  // Enable text selection and copying
+  document.body.style.userSelect = "auto";
+  document.body.style.webkitUserSelect = "auto";
+  document.body.style.mozUserSelect = "auto";
+  document.body.style.msUserSelect = "auto";
+  document.body.style.pointerEvents = "auto";
+});
+</script>
+
+
+</body>
+</html>

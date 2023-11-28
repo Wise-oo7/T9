@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+
+:root {
+  --color-brand-primary: hsl(var(--color-brand-primary-h), 43%, 43%);
+  --color-brand-primary-h: 251;
+  --color-brand-primary-s: 43%;
+  --color-brand-primary-l: 43%;
+  --color-brand-accent: hsl(var(--color-brand-accent-h), 96%, 61%);
+  --color-brand-accent-h: 16;
+  --color-brand-accent-s: 96%;
+  --color-brand-accent-l: 61%;
+  --color-brand-accent-bg: hsl(calc(var(--color-brand-accent-h) + 17), 100%, 96%);
+  --ratio: 1.4;
+  --s-6: calc(var(--s-5) / var(--ratio));
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: calc(1.05rem + 0.333vw);
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+  --s6: calc(var(--s5) * var(--ratio));
+  font-size: 62.5%;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+
+
+
+/* Disable text selection and copying */
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
+
+
+
+
+@media (min-width: 40.625em) {
+  :root {
+    --s0: calc(1.25rem + 0.333vw);
+  }
+}
+@media (min-width: 48em) {
+  :root {
+    --s0: calc(1.4rem + 0.333vw);
+  }
+}
+@media (min-width: 62em) {
+  :root {
+    --s0: calc(1.6rem + 0.333vw);
+  }
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  font-size: 1.4rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  background-color: white;
+  min-height: 100vh;
+}
+@media (min-width: 48em) {
+  body {
+    font-size: 1.5rem;
+  }
+}
+h2, h3, p, ul {
+  margin: 0;
+}
+ul {
+  padding: 0;
+}
+ul li {
+  /* Remove li Bullets with zero-width space for accessability */
+  list-style-type: none;
+}
+ul li:before {
+  content: "\200B";
+  /* add zero-width space */
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  position: absolute;
+}
+.c-section {
+  padding: 0 var(--s3);
+}
+.c-section__title {
+  padding: var(--s2) var(--s3) calc(var(--s6) * 1.8);
+  margin: 0 calc(var(--s3) * -1);
+  color: #fff;
+  font-size: var(--s4);
+  font-weight: 900;
+  text-align: center;
+}
+@media (min-width: 40.625em) {
+  .c-section__title {
+    padding: var(--s2) var(--s3) var(--s4);
+  }
+}
+@media (min-width: 40.625em) {
+  .c-section__title {
+    display: flex;
+    align-items: self-start;
+    justify-content: flex-end;
+    position: relative;
+    text-align: unset;
+  }
+}
+.c-section__title:after {
+  content: '';
+  display: block;
+  background-size: calc(var(--s5) * 3) calc(var(--s5) * 3);
+  width: calc(var(--s5) * 3);
+  height: calc(var(--s5) * 3);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(11rem);
+  z-index: 1;
+  background-image: url("");
+}
+@media (min-width: 40.625em) {
+  .c-section__title:after {
+    margin-left: auto;
+    margin-right: 0;
+    transform: translateY(2rem);
+  }
+}
+.c-section span:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  transform: skew(0deg, 10deg);
+  z-index: -1;
+  background: var(--color-brand-primary);
+  background-attachment: fixed;
+  background-image: url("");
+}
+.c-section span:after {
+  content: " " ;
+  display: block;
+  font-size: 1.4rem;
+  position: absolute;
+  font-weight: 350;
+  padding: 0 var(--s3);
+  color: rgba(255, 255, 255, 0.85);
+  left: 9px;
+}
+@media (min-width: 40.625em) {
+  .c-section span:after {
+    font-size: 23%;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-section span:after {
+    width: 47ch;
+  }
+}
+@media (min-width: 48em) {
+  .c-section span:after {
+    width: 57ch;
+  }
+}
+@media (min-width: 62em) {
+  .c-section span:after {
+    width: 67ch;
+  }
+}
+.c-services {
+  display: grid;
+  grid-gap: var(--s2);
+  margin: 0 calc(var(--s3) * -1);
+  padding: var(--s6) var(--s3);
+  position: relative;
+  z-index: 1;
+}
+
+
+a{
+    text-decoration: none;
+    padding: 15%;
+}
+.btn{
+     height: 30%;
+     text-height: 30px;
+    width: 15%;
+    padding: 20px;
+    
+}
+.db{
+    background-color: yellow;
+   
+    width: 30%;
+    border-radius: 10%;
+}
+db h1{
+
+  padding: 30px;
+}
+h1{
+
+    
+}
+
+@media (min-width: 40.625em) {
+  .c-services {
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: minmax(100px, 1fr);
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services {
+    padding: 0 var(--s3);
+  }
+}
+.c-services:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--color-brand-accent-bg);
+  width: 100%;
+  height: 100%;
+  transform: skew(0deg, 10deg);
+  background-image: url("");
+}
+.c-services__item {
+  background: #fff;
+  padding: calc(var(--s2) - 0.6rem) var(--s1);
+  border-radius: 25px;
+  box-shadow: 0 7px 20px rgba(100, 28, 2, 0.135);
+  transition: all 300ms ease, transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 40.625em) {
+  .c-services__item {
+    transform: translateY(-85px);
+  }
+}
+@media (min-width: 48em) {
+  .c-services__item {
+    transform: translateY(-130px);
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(1) {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(1) {
+    grid-column: 5 / -1;
+    grid-row: 3;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(2) {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(2) {
+    grid-column: 3 / span 2;
+    grid-row: auto;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(3) {
+    grid-column: 4 / -1;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(3) {
+    grid-column: 4 / -1;
+    grid-row: 2;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(4) {
+    grid-column: 1 / span 4;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(4) {
+    grid-column: 1 / span 3;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(5) {
+    grid-column: 5 / -1;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(5) {
+    grid-column: 1 / span 4;
+  }
+}
+@media (min-width: 40.625em) {
+  .c-services__item:nth-of-type(6) {
+    grid-column: 1 / span 4;
+    grid-row: 1;
+  }
+}
+@media (min-width: 62em) {
+  .c-services__item:nth-of-type(6) {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+}
+.c-services__item h3 {
+  color: var(--color-brand-primary);
+  font-size: var(--s1);
+  line-height: 1.2;
+}
+.c-services__item:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px 0;
+  cursor: pointer;
+  transition: inherit;
+  background-color: var(--color-brand-accent);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("");
+}
+.c-services__item p {
+  margin-top: var(--s-1);
+  font-weight: 400;
+  color: #706d7e;
+}
+.c-services__item:hover {
+  background-color: var(--color-brand-accent);
+}
+@media (min-width: 40.625em) {
+  .c-services__item:hover {
+    transform: translateY(-93px);
+  }
+}
+@media (min-width: 48em) {
+  .c-services__item:hover {
+    transform: translateY(-138px);
+  }
+}
+.c-services__item:hover h3 {
+  color: #fff;
+}
+.c-services__item:hover p {
+  color: rgba(255, 255, 255, 0.8);
+}
+.c-services__item:hover:after {
+  background-color: #fff;
+  background-image: url("");
+}
+
+
+</style>
+</head>
+<body>
+
+
+
+<section class="c-section">
+    <h2 class="c-section__title"><span>Privacy Policy.</span></h2>
+    <ul class="c-services">
+	
+	
+	
+        <li class="c-services__item">
+            <h3>Privacy Policy.</h3>
+			
+            <p>	
+
+<br>Privacy Policy:-<br>
+<br>Wise Warden, together with subsidiaries and international affiliates ("Wise Warden", "we", "us") respect your privacy and want you to understand how we collect, use, and share data about you through our online platforms such as this website and mobile application. This Privacy Policy covers our data collection practices and describes your rights to access, correct, or restrict our use of your personal data. This privacy policy is drafted in accordance with applicable data protection laws, including without limitation IT Act, 2000 and the General Data Protection Regulations, 2018.
+
+Unless we link to a different policy or state otherwise, this Privacy Policy applies when you visit or use the Wise Warden website, mobile applications, APIs or related services (the “Services”). This Privacy Policy, along with the Terms of Use, together govern your use of the Services.
+
+<br>The "Data Controller" (i.e., Wise Warden) means the entity that will make the decisions about how your data is used and that is responsible for deciding how it holds personal information about you. Since Wise Warden is made up of different legal entities, the entity who will be the controller for your data is dependent on the situation where your personal data is collected.
+
+By using the Services, you agree to the terms of this Privacy Policy and the Terms of Use. You shouldn’t use the Services if you don’t agree with this Privacy Policy or any other agreement that governs your use of the Services. You further agree that Wise Warden reserves the right to share the data collected hereunder with its affiliates. In the event of sale or transfer of all or a portion of our business assets, your information and data may be one of the business assets that are transferred as part of the transaction. If you refuse or withdraw your consent, or if you choose not to provide us with any required data mentioned herein, we may not be able to provide you the Services.
+
+<br><br>1. Legal Basis for Processing Data<br>
+We process your data on the basis of the following:<br>
+
+Your consent for processing your data (as mentioned in Section 2 below), and for the purposes mentioned in Section 4 below. It is hereby clarified that we may obtain your consent to collect and use certain types of personal data when we are required to do so by law. Once consent is obtained from the individual to use his or her information for those purposes, Wise Warden has the individual's implied consent to collect or receive any supplementary information that is necessary to fulfil the same purposes. Express consent will also be obtained if, or when, a new use is identified. Consent may also be implied where a user is given notice and a reasonable opportunity to opt-out of his or her personal information being used for mail-outs, the marketing of new services or products, and the client, customer, member does not opt-out. Subject to certain exceptions (e.g., the personal information is necessary to provide the service or product, or the withdrawal of consent would frustrate the performance of a legal obligation), individuals can withhold or withdraw their consent for Wise Warden to use their personal information in certain ways. Further, by using this website/ acknowledging this privacy policy / by voluntarily providing us with your personal data, you consent to collection, storage, and processing of your personal data in accordance with this privacy policy and our Terms of Use. If you refuse or withdraw your consent, or if you choose not to provide us with any required personal data, we may not be able to provide you the services that can be offered on our platform;
+For the performance of contracts entered into by you for providing any of the Services;
+Our legitimate interests, i.e. registering and administering accounts on our Services to provide you access to all content, updates and services you have purchased, and to facilitate the efficient running and operation of our business;
+Processing to comply with legal and regulatory obligations;
+Processing necessary to protect vital interest of a user or any other natural person; and
+Processing necessary for public interest
+<br>2. What Data We Collect<br>
+We collect certain data from you directly, like the information you enter yourself, data about your participation in knowledge, and data from third-party platforms you connect with Wise Warden. We also collect some data automatically, like information about your device and what parts of our Services you interact with or spend time using.
+
+<br><br>2.1 Data You Provide to Us<br>
+We may collect different data from or about you depending on how you use the Services. Below are some examples to help you better understand the data we collect.
+When you create an account and/or use the Services, including through a third-party platform, we collect the following data:
+Account and Related Data	In order to use certain features (like applying for a program), you need to create a user account. When you create or update your account, or provide your information via any other forms or means, we collect and store the data you provide, like your name, email address, password, city, age, guardian name, residential and contact details (if required), date of birth, program you like to learn, IP address, educational qualification, work experience, salary, resume, gender, socio-economic status, industry where you work, job title, company name, photograph, signature, phone number, and assign you a unique identifying number (“Account Data”). If you are a registered user, we may also have access to your login credentials.
+Profile Data	You can also choose to provide profile information like a photo, social media profile, or other data. Your Profile Data will be publicly viewable by others.
+Other Identification Data	In order to provide our Services, we may request you to provide certain other identification details such as Social security, tax, Permanent Account Number, Aadhar Card number, or such similar identification details.
+
+
+	<br><br>If you contact us for support or to report a problem or concern (regardless of whether you have created an account), we collect and store your contact information, messages, and other data about you like your name, email address, location, operating system, IP address, and any other data you provide or that we collect through automated means (which we cover below). We use this data to respond to you and research your question or concern, in accordance with this Privacy Policy. In order to have a record of our communication with you and for internal training and quality maintenance purposes, we may also record your calls with us.
+Third Parties	We are also working closely with third parties (including, for example, educational partners, scholarship providers, marketing partners, sales affiliates, subcontractors in technical/advertising networks, analytics providers, and search information providers) and may receive information about you from such sources. We may also receive your information from your employers, educational institution or scholarship providers, where your program is partly or fully sponsored by such a third-party. The third-party sponsoring your participation in the programs may provide us your information, subject to our agreement with them and, therefore, the third-party sponsor may be the controller with respect to such data. In cases where you have been referred under any referral scheme, we will receive your information from the referrer.
+Behavioural Data	Data inferred or assumed information relating to your behaviour and interests based on your online activity on our sites, which may be derived from the Usage Data (mentioned below).
+Data Provided through Inquiries	While you inquire about our services, you may provide, or would be requested to provide personal data (stated in the inquiry form, or otherwise) such as name, address, phone number, country, subject of inquiry, personal details (name on the card, billing address), payment details (card numbers, card type), recordings of calls with students and users showing interest in our programs, information about your interactions with customer service and maintenance interactions with us.
+Legal Requirements	Information needed in order to comply with any procedures, laws, and regulations which apply to us where it is necessary for our legitimate interests or the legitimate interests of others
+Any other information	Any other information you choose to directly provide to us in connection with your use of the Services
+The data listed above is stored by us and associated with your account.<br>
+
+Special Category of Personal Data includes details about your race or ethnicity, religious or philosophical beliefs, sex life, sexual orientation, political opinions, trade unions memberships, information about your health and genetic and biometric data. We do not collect or process any special or sensitive personal data.
+
+Should we specifically require “special” or “sensitive” personal data in connection with one or more of the uses described below, we will request your explicit consent to use the data in accordance with this policy and/or in the ways described at the point where you were asked to disclose the data.
+
+Other legal basis for our processing of special category data may include, as permitted by applicable law, for scientific research, for employment, social security or social protection law, for reasons of substantial public interest, or as necessary for the establishment, exercise or defence of legal claims. If you voluntarily share with us or post/upload any “special” or “sensitive” Personal Data to our platforms for any other reason, you consent that we may use such data in accordance with applicable law and this policy. You can contact our DPO for more information about our processing of your Personal Data.
+
+<br><br>2.2 Data We Collect through Automated Means<br>
+When you access the Services (including browsing courses), we collect certain data by automated means, including:
+
+<br><br>System Data	Technical data about your computer or device, like your IP address, device type, operating system type and version, unique device identifiers, browser, browser language, domain, and other systems data, and platform types (“System Data”).
+Usage Data	Usage statistics about your interactions with the Services, including programs and courses accessed, time spent on pages or the Service, pages visited, features used, click data, date and time, and other data regarding your use of the Services (“Usage Data”).
+Approximate Geographic Data	An approximate geographic location, including information like country, city, and geographic coordinates.
+The data listed above is collected through the use of server log files and tracking technologies, as detailed in the “Cookies and Data Collection Tools” section below. It is stored by us and associated with your account.
+
+<br>3. How We Get Data About You<br>
+We use tools like cookies, web beacons, analytics services, and advertising providers to gather the data listed above. Some of these tools offer you the ability to opt out of data collection.
+
+<br><br>3.1 Cookies and Data Collection Tools<br>
+As detailed in our Cookie Policy, Wise Warden and service providers acting on our behalf (like Google Analytics and third party advertisers) use server log files and automated data collection tools like cookies, tags, scripts, customized links, device or browser fingerprints, and web beacons (together, “Data Collection Tools”) when you access and use the Services. These Data Collection Tools automatically track and collect certain System Data and Usage Data (as detailed in Section 2.2) when you use the Services. In some cases, we tie data gathered through those Data Collection Tools to other data that we collect as described in this Privacy Policy.
+
+We use cookies (small files that websites send to your device to uniquely identify your browser or device or to store data in your browser) for things like analyzing your use of the Services, personalizing your experience, making it easier to log into the Services, and recognizing you when you return. We use web beacons (small objects that allow us to measure the actions of visitors and users using the Services) for things like identifying whether a page was visited, identifying whether an email was opened, and advertising more efficiently by excluding current users from certain promotional messages or identifying the source of a new page visit.
+
+<br>Wise Warden uses the following types of cookies:<br>
+
+<br><br>Preferences: cookies that remember data about your browser and preferred settings that affect the appearance and behavior of the Services (like your preferred language).
+Security: cookies used to enable you to log in and access the Services; protect against fraudulent logins; and help detect and prevent abuse or unauthorized use of your account.
+Functional: cookies that store functional settings (like the volume level you set for video playback).
+Session State: cookies that track your interactions with the Services to help us improve the Services and your browsing experience, remember your login details, and enable processing of your course purchases. These are strictly necessary for the Services to work properly, so if you disable them then certain functionalities will break or be unavailable.
+You can set your web browser to alert you about attempts to place cookies on your computer, limit the types of cookies you allow, or refuse cookies altogether. If you do, you may not be able to use some or all features of the Services, and your experience may be different or less functional.
+
+Some of the third-party partners who provide certain features on our site may also use Local Storage Objects (also known as flash cookies or LSOs) to collect and store data.
+
+<br><br>3.2 Analytics<br>
+We use the 3rd-party browser and mobile analytics services like Google Analytics, Hotjar, GetSiteControl, Mixpanel, WebEngage, Wistia, YouTube and Drift on the Services. These services use Data Collection Tools to help us analyze your use of the Services, including information like the third-party website you arrive from, how often you visit, events within the Services, usage and performance data. We use this data to improve the Services, better understand how the Services perform on different devices and provide information that may be of interest to you.
+
+<br>3.3 Online Advertising<br>
+We use third-party advertising services like Facebook, Google’s ad services, and other ad networks and ad servers to deliver advertising about our Services on other websites and applications you use. The ads may be based on things we know about you, like your Usage Data and System Data (as detailed in Section 2.2), and things that these ad service providers know about you based on their tracking data. The ads can be based on your recent activity or activity over time and across other sites and services and may be tailored to your interests.
+
+Depending on the types of advertising services we use, they may place cookies or other tracking technologies on your computer, phone, or other devices to collect data about your use of our Services, and may access those tracking technologies in order to serve these tailored advertisements to you. To help deliver tailored advertising, we may provide the service providers with your email address and content that you share publicly on the Services. Additionally, we have third-party sales and marketing affiliates who may collect your information through one of the various channels owned by them and share this information with us, based on your interest in our Services. For example, an affiliate may hold an event and share the details of the attendees with Wise Warden. Please note that any third parties, including third parties mentioned in Section 2, are not permitted by Wise Warden to sell or share your data as part of this process. If such third parties sell or share the data as part of the process, Wise Warden’s sole liability shall be limited to providing you with reasonable assistance in any action you may choose to take against such third parties, at your sole cost and expense.
+
+<br><br>4. What We Use Your Data For, and How Long We Store it<br>
+<br>4.1 How we use your data<br>
+We use your data to do things like provide our Services, communicate with you, troubleshoot issues, secure against fraud and abuse, improve and update our Services, analyze how people use our Services, serve personalized advertising, and as required by law or necessary for safety and integrity.
+
+<br><br>We use the data we collect through your use of the Services to:
+Provide and administer the Services, including to display customized content and facilitate communication with other users;
+Process your requests and orders for programs, courses, specific services, information, or features;
+Communicate with you about your account by:<br>
+<br>Responding to your questions and concerns;<br>
+Sending you administrative messages and information, including messages from instructors and teaching assistants, notifications about changes to our Service, and updates to our agreements;
+Sending you information and in-app messages about your progress in courses, rewards programs, new services, new features, promotions, newsletters, and other available courses (which you can opt out of at any time);
+Sending push notifications to your wireless device to provide updates and other relevant messages (which you can manage from the “options” or “settings” page of the mobile app);
+Manage your account preferences;
+<br><br>Facilitate the Services’ technical functioning, including troubleshooting and resolving issues, securing the Services, and preventing fraud and abuse;
+Solicit feedback from users;
+Market and administer surveys and promotions administered or sponsored by Wise Warden;
+Learn more about you by linking your data with additional data through third-party data providers or analyzing the data with the help of analytics service providers;
+Identify unique users across devices;
+Tailor advertisements across devices;<br>
+Improve our Services and develop new products, services, and features;
+Analyze trends and traffic, track purchases, and track usage data;
+Advertise the Services on third-party websites and applications;
+As required or permitted by law; or
+As we, in our sole discretion, otherwise determine to be necessary to ensure the safety or integrity of our users, employees, third parties, the public, or our Services.
+It is hereby clarified that irrespective of the fact that you have registered yourself under DND or DNC or NCPR service, or any such similar service, you still authorize us to give you a call from us or any third party for the above mentioned purposes till you withdraw/cancel your registration with us. Wise Warden may send email notices or contact you via SMS, phone call or any other medium to communicate about its Services. We may, from time to time, use business partners, operational service providers and subcontractors to operate and provide our services to you and to comply with legal and regulatory requirements. As necessary under this Privacy Policy, our service providers are required to protect the information we provide them in a manner that is consistent with this Privacy Policy. Although we exercise care in selecting our service providers and require them to protect information as mentioned above, they are independent third parties and we may not have control on their privacy practices.
+
+<br>4.2 Criterion For Determining Data Retention Period<br>
+It is not possible for us to determine a specific period for which we may retain your data. However, we will retain your data for longer than necessary, taking into account the following:
+
+
+
+
+
+
+<br><br><br>The purpose(s) and use of your data, both now and in the future (such as whether it is necessary to continue to store that information in furtherance of our obligations under a contract with you, or to contact you in the future);
+Whether we have any legal obligation to continue processing your data (such as any record-keeping obligations imposed by any applicable law);
+Whether we have any further legal basis to continue processing your information (including your consent);
+Whether there is any relevant agreed industry practice on how long such data should be retained;
+The levels of risk and liability involved for us to continue holding the data;
+The amount of difficulty we may face to ensure the data can be kept updated and accurate; and
+Any other circumstances (such as the nature and status of Wise Warden’s relationship with you).<br>
+<br>5. Who We Share Your Data With<br>
+We share certain data about you with instructors, program managers, other students, companies performing services for us, our business partners, analytics and data enrichment providers, your social media providers, companies helping us run promotions and surveys, and advertising companies who help us promote our Services. We may also share your data as needed for security, legal compliance, or as part of a corporate restructuring. Lastly, we can share data in other ways if it is aggregated or de-identified or if we get your consent.
+
+We may share your data with third parties under the following circumstances or as otherwise described in this Privacy Policy:
+
+<br><br><br>With Your Learning Consultants, Admissions and Wise Warden Team: We share data that we have about you with your Learning Consultant and our Admission Team, so they can suggest the right program or course for you. This data may include things like your city, country, browser language, operating system, device settings, email id, phone number, your work experience and other work-related information, your activities on our website and learning management system.
+With our Educational Partners: We may share the information that we collect from you with the particular Educational Partners (e.g., a university or a company) that developed or offered the program you are taking. The Educational Partners may use the data to send you promotional information and other communications and may also send invitations to participate in research opportunities.
+Employers, Sponsors and Scholarship Providers: If you are taking a program that is sponsored or paid for by your employer or a sponsor, or if you have availed a scholarship from a third-party scholarship provider, we may share your data and grades, evaluations or progress in the program with your employer/sponsor/scholarship provider. This information may be shared at any time during the program or afterwards.
+With Your Instructors, Evaluators, Moderators and Mentors: We share data that we have about you with instructors or teaching assistants for courses you enroll in or request information about, so they can improve their courses for you and other students. This data may include things like your city, country, browser language, operating system, device settings, email id, phone number, your work experience, and other work-related information, your activities on our website and learning management system.
+With Other Students and Instructors: Depending on your settings, your shared content, and profile data may be publicly viewable, including to other students and instructors. We may publish your name, percentage, percentile, marks and/or rank in the form of a leaderboard on your dashboard, accessible to you and your fellow batchmates, depending on your settings. If you ask a question to an instructor or teaching assistant, your information (including your name) may also be publicly viewable by other users depending on your settings.
+With Students, public and other mentors: If you’re a mentor or Instructor, we share data that we have about you with students, program managers and employees of Wise Warden, so they can reach out to you to clarify questions or provide services to you. This data may include things like your name, email id, phone number, professional and education details, your activities on our website and learning management system.
+With Service Providers, Contractors, and Agents: We share your data with third-party companies who perform services on our behalf, like payment processing, reward processing, data analysis, marketing, and advertising services (including retargeted advertising), email and hosting services, and customer services and support. These service providers may access your personal data and are required to use it solely as we direct, to provide our requested service.
+With Business Partners: We have agreements with other websites and platforms to distribute our Services and drive traffic to Wise Warden.
+With Analytics and Data Enrichment Services: As part of our use of third-party analytics tools like Google Analytics and data enrichment services like Clearbit or Pipl, we share certain contact information, Account Data, System Data, Usage Data (as detailed in Section 2), or de-identified data as needed. De-identified data means data where we’ve removed things like your name and email address and replaced it with a token ID. This allows these providers to provide analytics services or match your data with publicly-available database information (including contact and social information from other sources). We do this to communicate with you in a more effective and customized manner.
+To Power Social Media Features: The social media features in the Services (like the Facebook Share) may allow the third-party social media provider to collect things like your IP address and which page of the Services you’re visiting, and to set a cookie to enable the feature. Your interactions with these features are governed by the third-party company’s privacy policy.
+To Administer Promotions and Surveys: We may share your data as necessary to administer, market, or sponsor promotions and surveys you choose to participate in, as required by applicable law (like to provide a winners list or make required filings), or in accordance with the rules of the promotion or survey.
+For Advertising: If we decide to offer advertising in the future, we may use and share certain System Data and Usage Data with third-party advertisers and networks to show general demographic and preference information among our users. We may also allow advertisers to collect System Data through Data Collection Tools (as detailed in Section 3.1), and to use this data to offer you targeted ad delivery to personalize your user experience (through behavioral advertising) and undertake web analytics. Advertisers may also share with us the data they collect about you. To learn more or opt out from participating ad networks’ behavioral advertising, see Section 7.1 (Your Choices About the Use of Your Data) below. Note that if you opt out, you’ll continue to be served generic ads.
+Recruitment Services: If you have opted for any of our recruitment services or if you participate in any of our recruitment activities, we will be sharing your information with recruiters and potential employers. For example, if you participate in a recruitment drive jointly organised by Wise Warden and a recruitment agency, we will share your information with the recruitment agency and with potential employers who wish to consider you for employment. In this case, such a recruitment agency or an employer may directly contact you to schedule interviews, etc. Please note that any information you share with the recruitment agency or employer will be governed by their terms and policies.
+Alumni Portal and Networking Services: We may collaborate with certain third-party service providers to arrange and provide networking activities to previous, current or potential students of Wise Warden. For this purpose, we may share certain basic information such as your name, email address and cohort details with such third-party service providers in order to enable them to invite you to connect. Should you agree to sign up to their services, please note that any information you provide will be governed by their policies. In certain cases, in order to facilitate communication between students, we may share your information with other students on chat forums such as WhatsApp, Facebook etc.
+For Security and Legal Compliance: We may disclose your data to third parties if we (in our sole discretion) have a good faith belief that the disclosure is:
+<br><br><br>Permitted or required by law;<br>
+Requested as part of a judicial, governmental, or legal inquiry, order, or proceeding;
+Reasonably necessary as part of a valid subpoena, warrant, or other legally-valid request;
+Reasonably necessary to enforce our Terms of Use, Privacy Policy, and other legal agreements;
+Required to detect, prevent, or address fraud, abuse, misuse, potential violations of law (or rule or regulation), or security or technical issues; or
+Reasonably necessary in our discretion to protect against imminent harm to the rights, prope­­rty, or safety of Wise Warden, our users, employees, members of the public, or our Services.
+We may also disclose data about you to our auditors and legal advisors in order to assess our disclosure obligations and rights under this Privacy Policy.
+During a Change in Control.
+
+<br><br><br>6. Security<br>
+We use appropriate security based on the type and sensitivity of data being stored. As with any internet-enabled system, there is always a risk of unauthorized access, so it’s important to protect your password and to contact us if you suspect any unauthorized access to your account.
+
+
+<br>7. Your Rights<br>
+You have certain rights around the use of your data, including the ability to opt out of promotional emails, cookies, and collection of your data by certain analytics providers. You can update or terminate your account from within our Services, and can also contact us for individual rights requests about your personal data such as to restrict/object our processing of your data, to erase all data we have stored about you, and the right to ask for the data to be provided to you/ported to any other service in a commonly used machine readable format.
+
+Parents who believe we’ve unintentionally collected personal data about their underage child should contact us for help deleting that information.
+
+<br><br><br>7.1 Your Choices About the Use of Your Data<br>
+You can choose not to provide certain data to us, but you may not be able to use certain features of the Services
+
+<br>To stop receiving promotional communications from us, you can opt out by using the unsubscribe mechanism in the promotional communication you receive or by changing the email preferences in your account. Note that regardless of your email preference settings, we will send you transactional and relationship messages regarding the Services, including administrative confirmations, order confirmations, important updates about the Services, and notices about our policies.
+The browser or device you use may allow you to control cookies and other types of local data storage. Your wireless device may also allow you to control whether location or other data is collected and shared.
+To get information and control cookies used for tailored advertising from participating companies, see the consumer opt-out pages for the Network Advertising Initiative and Digital Advertising Alliance, or if you’re located in the European Union, visit the Your Online Choices site. To opt out of Google’s display advertising or customize Google Display Network ads, visit the Google Ads Settings page.
+To opt out of allowing Google Analytics, Hotjar, Mixpanel, ZoomInfo, or Clearbit to use your data for analytics or enrichment, see the Google Analytics Opt-out Browser Add-on, Hotjar Opt-Out Cookie,Mixpanel Opt-Out Cookie, ZoomInfo’s policy, and Pipl Removal from Search results.
+If you have any questions about your data, our use of it, or your rights, contact us at ......
+
+<br>7.2 Accessing, Updating and Correcting, Porting and Deleting Your Personal Data<br>
+You can access and update your personal data that Great Learning collects and maintains as follows:
+
+
+<br><br><br>7.4 Complaints about our privacy policy or use of your data<br>
+While we take all measures to protect and secure your data, we understand that you may have grievances about our use of your data, or of our data protection measures. Please feel free to reach out to us.
+In case you are not satisfied with our response, you can also reach out to the national data protection authorities in your region (provided you are in the EU). The list of national data protection authorities for EU member states may be accessed here.
+
+Please note that while we urge you to write to us for any grievances or with any complaints you may have, this does not preclude you from directly approaching the national data protection authorities mentioned above.
+
+<br>7.5 Our Policy Concerning Children<br>
+We recognize the privacy interests of children and encourage parents and guardians to take an active role in their children’s online activities and interests. Our Services are not intended for children under 13 (or under 16 in the European Economic Area), and the children under these ages may not use the Services. If we learn that we’ve collected personal data from a child under those ages without verified parental consent, we will take reasonable steps to delete it. Parents or guardians who believe that Wise Warden may have collected personal data from a child under those ages can submit a request that it be removed to...
+
+All users who are minors in the jurisdiction in which they reside (generally under the age of 18) may not set up an account and have a parent or a guardian open an account for them, and must have the permission of, and be directly supervised by, their parent or guardian to use the Services. Additionally, this privacy policy should also be read in the presence of such parent/guardian.
+
+<br>8. Jurisdiction-Specific Rules<br>
+If you live in California, you have certain rights to request information. Users outside of the United States should note that we transfer data to India and other areas outside of the European Economic Area.
+
+<br>8.1 Users in California<br>
+If you are a California resident, you have the right to request certain details about what personal information we share with third parties for those third parties’ direct marketing purposes. To submit your request, send an email too///.
+
+Since the internet industry is still working on Do Not Track standards, solutions, and implementations, we do not currently recognize or respond to browser-initiated Do Not Track signals.
+
+
+<br><br><br>9. Updates & Contact Info<br>
+When we make a material change to this policy, we’ll notify users via email, in-product notice, or another mechanism required by law. Changes become effective the day they’re posted. Please contact us via email with any questions, concerns, or disputes.
+
+<br>9.1 Modifications to This Privacy Policy<br>
+From time to time, we may update this Privacy Policy. If we make any material change to it, we will notify you via email, through a notification posted on the Services, or as required by applicable law. We will also include a summary of the key changes. Unless stated otherwise, modifications will become effective on the day they are posted.
+
+As permitted by applicable law, if you continue to use the Services after the effective date of any change, then your access and/or use will be deemed an acceptance of (and agreement to follow and be bound by) the revised Privacy Policy. The revised Privacy Policy supersedes all previous Privacy Policies.
+
+<br>9.2 Interpretation<br>
+Any capitalized terms not defined in this policy are defined as specified in Wise Warden's Terms of Use.
+
+<br>9.3 Questions<br>
+If you have any questions, concerns, or disputes regarding our Privacy Policy, please feel free to contact our privacy team (including our designated personal information protection manager) .
+
+
+<br>10. Cookie Policy<br>
+What are cookies?
+
+Cookies are small text files stored by your browser as you browse the internet. They can be used to collect, store, and share data about your activities across websites, including on Wise Warden. Cookies also allow us to remember things about your visits to Wise Warden, like your account ID, and to make the site easier to use.
+
+We use both session cookies, which expire after a short time or when you close your browser, and persistent cookies, which remain stored in your browser for a set period of time. We use session cookies to identify you during a single browsing session, like when you log into Wise Warden. We use persistent cookies where we need to identify you over a longer period, like when you request that we keep you signed in.
+
+Why does Wise Warden use cookies and similar technologies?
+
+We use cookies and similar technologies like web beacons, pixel tags, or local shared objects (“flash cookies”), to deliver, measure, and improve our services in various ways. We use these cookies both when you visit our site and services through a browser and through our mobile app. As we adopt additional technologies, we may also gather additional data through other methods.
+
+We use cookies for the following purposes:
+
+<br><br><br>Authentication and security	<br>
+To log you into Wise Warden
+To protect your security
+To help detect and fight spam, abuse, and other activities that violate Wise Warden’s agreements
+For example, cookies help authenticate your access to Wise Warden and prevent unauthorized parties from accessing your accounts
+
+<br>Preferences	<br>
+To remember data about your browser and your preferences
+To remember your settings and other choices you’ve made
+For example, cookies help us remember the program you’re interested in, so we can provide communication relevant to this program each time you visit.
+
+<br>Analytics and research	<br>
+To help us improve and understand how people use Wise Warden
+For example, cookies help us test different versions of Wise Warden to see which features or content users prefer, web beacons help us determine which email messages are opened, and cookies help us see how you interact with Wise Warden, like the links you click on.
+
+We also work with a number of analytics partners, including Google Analytics and Mixpanel, who use cookies and similar technologies to help us analyze how users use the Services, including by noting the sites from which you arrive. Those service providers may either collect that data themselves or we may disclose it to them.
+
+<br>Personalized content<br>	
+To customize Wise Warden with more relevant content
+For example, cookies help us show a personalized list of recommended programs on the homepage.
+
+<br>Advertising	<br>
+To provide you with more relevant advertising
+
+
+<br>Please note that where advertising technology is integrated into the Services, you may still receive advertising on other websites and applications, but it will not be tailored to your interests.
+
+When using mobile applications you may also receive tailored in-app advertisements. Apple iOS, Android OS, and Microsoft Windows each provide its own instructions on how to control in-app tailored advertising. For other devices and operating systems, you should review your privacy settings or contact your platform operator.
+
+<br>What are my privacy options?<br>
+
+<br><br><br>You have a number of options to control or limit how we and our partners use cookies:<br>
+
+Most browsers automatically accept cookies, but you can change your browser settings to decline cookies by consulting your browser’s support articles. If you decide to decline cookies, please note that you may not be able to sign in, customize, or use some interactive features in the Services.
+Flash cookies operate differently than browser cookies, so your browser’s cookie-management tools may not remove them. To learn more about how to manage Flash cookies, see Adobe’s article on managing flash cookies and Website Storage Settings panel.
+To get information and control cookies used for tailored advertising from participating companies, see the consumer opt-out pages for the Network Advertising Initiative and Digital Advertising Alliance, or if you’re located in the European Union, visit the Your Online Choices site. To opt out of Google Analytics’ display advertising or customize Google Display Network ads, visit the Google Ads Settings page.
+For general information about targeting cookies and how to disable them, visit www.allaboutcookies.org.
+11. Updates & Contact Info
+From time to time, we may update this Cookie Policy. If we do, we’ll notify you by posting the policy on our site with a new effective date. If we make any material changes, we’ll take reasonable steps to notify you in advance of the planned change.
+
+If you have any questions about our use of cookies, please email us.
+
+<br>12. Payment Fraud Prevention Policy<br>
+<br>12.1 Background And Objectives Of Policy<br>
+This document sets forth a prevention policy of payment frauds, to enforce controls and to aid in prevention and detection of payment frauds at Great Learning. The intent of the policy is to make you aware of the standard payment procedure that you have to follow for making any payments for availing our Services, and providing guidelines for reporting and conduct of investigations of suspected fraudulent behaviour.
+
+<br>12.2 Standard Payment Process<br>
+You have to make all the relevant payments with respect to the Service you are availing through Wise Warden’s official learning platform ‘Olympus’. No representative from Wise Warden will request you to make payments through any other medium. In case you have any queries, please feel free to write to us .in before initiating the payment process. Additionally, if you receive any such unusual request from any of our representatives/purported representatives, you may report this behavior by writing to us.
+
+<br>12.3 Actions Constituting Payment Fraud<br>
+Following acts may constitute a payment fraud:
+
+<br>12.4 Reporting Process<br>
+If you suspect, or are a victim of payment fraud, please forthwith write to us and share all the relevant proofs and correspondence with respect to the transaction in question. We will look into the matter and conduct the necessary investigation as per our internal process and guidelines. If required, we will take the appropriate disciplinary and legal action against the offender.
+
+<br>12.5 False Reporting<br>
+If it is established that you have falsely raised the complaint, then without prejudice to legal rights and remedies that Wise Warden may have, we will also be entitled to terminate the provision of our Services to you without any legal or financial liabilities towards you.
+
+<br>13. Governing Law<br>
+This Privacy Policy forms part of our Terms of Use and is governed in accordance with the laws in India.
+
+
+			</p>
+        </li>
+		
+    </ul>
+</section>
+    <div class="db">
+        <a href="index.html"><h1>HomePage</h1></a>
+    </div>
+	
+<script>
+document.getElementById("enableCopy").addEventListener("click", function() {
+  // Enable text selection and copying
+  document.body.style.userSelect = "auto";
+  document.body.style.webkitUserSelect = "auto";
+  document.body.style.mozUserSelect = "auto";
+  document.body.style.msUserSelect = "auto";
+  document.body.style.pointerEvents = "auto";
+});
+</script>
+
+</body>
+</html>

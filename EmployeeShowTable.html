@@ -1,0 +1,64 @@
+<%-- 
+    Document   : ShowEmpTable
+    Created on : May 10, 2023, 2:54:25 PM
+    Author     : kamlesh
+--%><%@page import="com.Perent_Child.Dao.EmpDao"%>
+<%@page import="com.Perent_Child.Bean.EmpBean"%>
+
+
+
+
+<%@page import="java.util.ArrayList"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <form>
+            <table border="10" align="center" color="red">
+                <tr>
+                    <th>Sno.</th>
+                     <th>Name</th>
+                     <th>Password</th>
+                      <th>Email</th>
+                       <th>Mobile</th>
+                        <th>AdharCard</th>
+                         <th>Address</th>
+                          <th>PostName</th>
+                           <th>Joining Date</th>
+                </tr>
+               
+                   <%
+                       int amount=0;
+                       int count=1;
+                  EmpDao ed=new EmpDao();
+                  ArrayList<EmpBean> al=ed.FindAllEmp();
+                  for(EmpBean e:al)
+                      
+                  {
+                       amount=amount+count;
+                   %> 
+                   <tr>
+                   <td><%=count++ %></td>
+                   <td><%=e.getEmpname() %></td>
+                   <td><%=e.getPassword() %></td>
+                   <td><%=e.getEmail() %></td>
+                   <td><%=e.getMobile() %></td>
+                   <td><%=e.getAddress() %></td>
+                   <td><%=e.getAddress() %></td>
+                   <td><%=e.getEmppost() %></td>
+                   <td><%=e.getDate() %></td>
+                  
+                  
+                   <td><a href="EmpDeleteController?empid=<%=e.getEmpid() %>">Delete</a></td>
+                   <%}%>
+                  
+                    
+                </tr>
+              </table>
+        </form>
+    </body>
+</html>
